@@ -1,10 +1,10 @@
 function validate(){
-   window.location = "https://github.com/login/oauth/authorize?client_id=3cde25dedb0296247158&redirect_uri=https://software-developer-org.github.io/blog/titlepost/titlepost.html"
+   window.location = "https://github.com/login/oauth/authorize?client_id=3cde25dedb0296247158"
 
     // send data to git api https://github.com/login/oauth/authorize
 
 
-
+   // maybe &redirect_uri=https://software-developer-org.github.io/blog/titlepost/titlepost.html
 
 
 

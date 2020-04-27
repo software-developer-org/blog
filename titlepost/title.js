@@ -1,17 +1,28 @@
 //handler function
 function submitButton(){
 
-//access the input 
+// - get current date 
+var today = new Date;
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = `${yyyy}-${mm}-${dd}-`;
+
+// - access the input 
 var input = document.getElementById("title").value;
 //format input to the  right filename
-var mydata = input.toLowerCase().replace(/ /gi,"-").concat(".md");
+var mydata = today + input.toLowerCase().replace(/ /gi,"-").concat(".md");
 
-window.alert(mydata);
+// - fetch code for put call
+var code = new URLSearchParams(window.location.search);
+
+
+
+window.alert(code);
 
 /*----TO DO----
 
-- fetch code and state for put call
-- get current date and add it to input
 - insert input in a PUT call to API
 - https://api.github.com
 */

@@ -4,7 +4,6 @@ function validate(){
    rurl= window.location.href;
 
    // generate state string and concat with http adress
-   state= btoa(rurl);
 
 
    // send data to git api https://github.com/login/oauth/authorize

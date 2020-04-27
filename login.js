@@ -9,6 +9,6 @@ function validate(){
 
    // send data to git api https://github.com/login/oauth/authorize
    window.location = resturl; 
-   resturl = "https://github.com/login/oauth/authorize?client_id=3cde25dedb0296247158&redirect_uri=${rurl}&state=${state}"
+   resturl = "https://github.com/login/oauth/authorize?client_id=3cde25dedb0296247158&redirect_uri=${rurl}"
 
     }

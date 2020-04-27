@@ -1,4 +1,4 @@
-//handler function
+//handler function 1
 function submitButton(){
 
 // - get current date 
@@ -14,8 +14,28 @@ var input = document.getElementById("title").value;
 //format input to the  right filename
 var mydata = today + input.toLowerCase().replace(/ /gi,"-").concat(".md");
 
+
+fetch()
+
+};
+
+//handler function 2 
+function tokengetter(){
 // - fetch code for put call
-var code = new URLSearchParams(window.location.search);
+var mycode = new URLSearchParams(window.location.search);
+
+ var mybody = { client_id: "3cde25dedb0296247158",
+            client_secret: "b75d345383bf898a6ddecd5bf108e3e3cdca0151",
+            code: mycode };
+
+// - get token for put call
+var api = "https://github.com/login/oauth/authorize"
+fetch(api,{method:  'Post', body: mybody})
+.then(function(response)
+{
+    var data = response.json
+});
+
 
 
 
@@ -29,5 +49,8 @@ window.alert(code);
  
 }
 
-//initialize listener with the handler function
-document.getElementById("submit").onclick = submitButton;
+//initialize Button-Listener with the handler function
+document.getElementById("submit").onclick = submitButton();
+
+//initialize Onload-Listender
+document.onload = tokengetter();

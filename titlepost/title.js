@@ -27,13 +27,14 @@ function tokengetter(){
 // - fetch code for put call
 var mycode = new URLSearchParams(window.location.search);
 
- var mybody = { client_id: "3cde25dedb0296247158",
+ let mybody = { client_id: "3cde25dedb0296247158",
             client_secret: "b75d345383bf898a6ddecd5bf108e3e3cdca0151",
             code: mycode };
 
 // - get token for put call
 var api = "https://github.com/login/oauth/access_token"
-fetch(api,{method:  'Post', headers: {'Content-Type': 'application/json',}, body: JSON.stringify(mybody),})
+fetch(api,{method:  'Post', headers: 
+{'Content-Type': 'application/json',}, body: JSON.stringify(mybody),})
 .then((response) => response.json())
 .then ((data) => {console.log('Success:',data);})
 .catch((error) => {console.log('Error:', error)});

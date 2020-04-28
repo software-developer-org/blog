@@ -27,9 +27,9 @@ function tokengetter(){
 // - fetch code for put call
 var mycode = new URLSearchParams(window.location.search);
 
- var mybody = { client_id: "3cde25dedb0296247158",
-            client_secret: "b75d345383bf898a6ddecd5bf108e3e3cdca0151",
-            code: mycode };
+ var mybody = { "client_id": "3cde25dedb0296247158",
+            "client_secret": "b75d345383bf898a6ddecd5bf108e3e3cdca0151",
+            "code": mycode };
 
 // - get token for put call
 var api = "https://github.com/login/oauth/access_token"

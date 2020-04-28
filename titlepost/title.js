@@ -32,7 +32,7 @@ var mycode = new URLSearchParams(window.location.search);
             code: mycode };
 
 // - get token for put call
-var api = "https://github.com/login/oauth/authorize"
+var api = "https://github.com/login/oauth/access_token"
 fetch(api,{method:  'Post', body: mybody})
 .then(function(response)
 {

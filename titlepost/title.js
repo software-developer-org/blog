@@ -33,7 +33,7 @@ var mycode = new URLSearchParams(window.location.search);
 
 // - get token for put call
 var api = "https://github.com/login/oauth/access_token"
-fetch(api,{method:  'Post' mode: 'no-cors', headers: 
+fetch(api,{method:  'Post', headers: 
 {'Content-Type': 'application/json',}, body: JSON.stringify(mybody),})
 .then((response) => response.json())
 .then ((data) => {console.log('Success:',data);})

@@ -33,16 +33,11 @@ var mycode = new URLSearchParams(window.location.search);
 
 // - get token for put call
 var api = "https://github.com/login/oauth/access_token"
-fetch(api,{method:  'Post', body: JSON.stringify(mybody)})
-.then(function(response)
-{
-    var data = response.json
-});
+fetch(api,{method:  'Post', headers: {'Content-Type': 'application/json',}, body: JSON.stringify(mybody),})
+.then((response) => response.json())
 
-
-
- 
 };
+
 
 //initialize Button-Listener with the handler function
 document.getElementById("submit").onclick = submitButton();

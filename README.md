@@ -35,3 +35,41 @@ Blog routes:
 - dashboard
 - login/
 
+# Creating local server
+
+- After installing Node.js, go in the blog directory to create a package.json by  using:
+
+```
+> npm init
+
+```
+	- Hit RETURN to accept the suggested default name.
+
+- Now install Express in blog directory and save it in the dependencies list using:
+
+```
+> npm install express --save
+
+```
+- In our JavaScript file server.js post the code to create a local server:
+
+```
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+
+```
+- After saving the file, we can run it locally using this command: 
+
+```
+> node server.js
+```
+Then, load http://localhost:3000/ in a browser to see the output.
+
+
+ 
+

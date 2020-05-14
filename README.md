@@ -1,3 +1,32 @@
+# Getting started
+
+- From GitHub, copy the link [blog repository](https://github.com/software-developer-org/blog)
+- Open bash command and clone the blog repository
+```
+git clone https://github.com/software-developer-org/blog
+```
+- Now change the directory to local blog directory:
+```
+cd blog
+```
+- In bash command switch the branch
+```
+git checkout develop
+```
+- Run local server:
+```
+> node server.js
+```
+Then, load http://localhost:3000/ in a browser to see the output.
+
+- References:
+
+- [Download/Install Node.js](https://nodejs.org/en/download/)
+
+- [Express.js](https://expressjs.com/en/starter/installing.html)
+
+- [Node Monitor](https://nodemon.io) - Node reload, automatically
+
 # About
 
 sharing is knowing: all about Web, APIs, functional, reactive and many more concepts

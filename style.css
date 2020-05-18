@@ -61,11 +61,12 @@
   height: 75vh;
   border-style: solid;
   border-width: 1px;
+  text-align: center;
 }
 
 /* Right column */
 .overview {
-  float: left;
+  float: right;
   width: 70%;
   height: 75vh;
   border-style: solid;

@@ -11,12 +11,14 @@
 
 <body>
     <div class="header">Software-Developer/About-Header
-        <button class="btnLogin">Login</button>
-        <button class="btnBack"><a href="#" onclick="history.go(-1);return false">Back</a></button>
-        <button class="btnBlog"><a href="/blog.html">Blog</a></button>
-        <button class="btnBookmarks"><a href="/bookmark.html">Bookmarks</a></button>
-        <button class="btnAbout"><a href="/about.html">About</a></button>
+        <button id="btnLogin">Login</button>
+        <button id="btnBack"><a href="#" onclick="history.go(-1);return false">Back</a></button>
+        <button id="btnBlog"><a href="/blog.html">Blog</a></button>
+        <button id="btnBookmarks"><a href="/bookmark.html">Bookmarks</a></button>
+        <button id="btnAbout"><a href="/about.html">About</a></button>
     </div>
+    
+    <script src="script.js"></script>
 
     <div class="overview">
 
@@ -32,31 +34,31 @@
         <div id="team">
             <h1>Team member</h1>
 
-            <p>Bio or cv of the team member is shown her</p>
+            <p>Bio or cv of the team member is shown here</p>
         </div>
     </div>
 
-        <div class="navbar">
-            <h3>About Us</h3>
-            <a href="#1">
-                <div id='TM1'>
-                    <h4>1. Tai Troung</h4>
-                    <img src="images/Tai.jpeg" style="width:80ps;height:80px">
-                </div>
-            </a>
-            <a href="#2">
-                <div id='TM2'>
-                    <h4>2. Ragip Gashi</h4>
-                    <img src="images/Ragip.jpeg" style="width:80px;height:80px">
-                </div>
-            </a>
-            <a href="#3">
-                <div id='TM3'>
-                    <h4>3. Rouven Gonzalez</h4>
-                    <img src="images/Rouven.jpeg" style="width:80px;height:80px">
-                </div>
-            </a>
-        </div>
+    <div class="navbar">
+        <h3>About Us</h3>
+        <a href="#1" onclick="aboutFunction();return false">
+            <div id='TM1'>
+                <h4>1. Tai Truong</h4>
+                <img src="images/Tai.jpeg" style="width:80ps;height:80px">
+            </div>
+        </a>
+        <a href="#2" onclick="aboutFunction();return false">
+            <div id='TM2'>
+                <h4>2. Ragip Gashi</h4>
+                <img src="images/Ragip.jpeg" style="width:80px;height:80px">
+            </div>
+        </a>
+        <a href="#3" onclick="aboutFunction();return false">
+            <div id='TM3'>
+                <h4>3. Rouven Gonzalez</h4>
+                <img src="images/Rouven.jpeg" style="width:80px;height:80px">
+            </div>
+        </a>
+    </div>
 
 </body>
 

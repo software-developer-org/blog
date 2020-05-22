@@ -19,7 +19,7 @@ git checkout develop
 ```
 Then, load http://localhost:3000/ in a browser to see the output.
 
-- To make server reload automatically, install *Node Monitor*
+- To make server reload automatically, install **Node Monitor**
 ```
 npm install -g nodemon
 ```

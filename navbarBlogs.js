@@ -1,5 +1,6 @@
 // Adding dummy datas to the nav bar
-function createData() {
+ function createData() {
+    
     const blogs = [
         {
             id: "1",
@@ -19,7 +20,6 @@ function createData() {
     var ol = document.createElement('ol');
 
     //Append it to the navbar
-    // document.getElementsByClassName('navbar');
     const navElement = document.getElementById('navBlogTitles');
 
     blogs.forEach(blog => {
@@ -41,20 +41,11 @@ function createData() {
 
         navElement.appendChild(blogLink);
     })
-
-    // document.body.appendChild(ol);
-
-    // for (var i = 0; i < blogs.length; i++) {
-    //     var li = document.createElement('li');
-    //     li.innerHTML = blogs[i];
-    //     ol.appendChild(li);
-    // }
 };
 
 function showContent(id) {
     console.log('>>>>TODO show content', id);
 }
-
 createData();
 
 // Blog button functions on click

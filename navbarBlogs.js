@@ -25,6 +25,13 @@ function createData() {
     blogs.forEach(blog => {
         // create a-tag for blog link
         const blogLink = document.createElement('a');
+        // fill attributes
+        blogLink.setAttribute('id', blog.id);
+        // onclick
+        blogLink.onclick = (event) => {
+            showContent(blog.id);
+        };
+
         // create h4 element for title as child of blog link
         const h4Element = document.createElement('h4');
         blogLink.appendChild(h4Element);
@@ -43,6 +50,10 @@ function createData() {
     //     ol.appendChild(li);
     // }
 };
+
+function showContent(id) {
+    console.log('>>>>TODO show content', id);
+}
 
 createData();
 

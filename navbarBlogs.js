@@ -23,7 +23,15 @@ function createData() {
     const navElement = document.getElementById('navBlogTitles');
 
     blogs.forEach(blog => {
+        // create a-tag for blog link
         const blogLink = document.createElement('a');
+        // create h4 element for title as child of blog link
+        const h4Element = document.createElement('h4');
+        blogLink.appendChild(h4Element);
+        // create text content for title text
+        const titleContent = document.createTextNode(blog.title);
+        h4Element.appendChild(titleContent);
+
         navElement.appendChild(blogLink);
     })
 

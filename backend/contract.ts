@@ -30,6 +30,7 @@ class TeamData { name: "Rouven Gonzalez"
 function getBlogs (): BlogData[]{
 
     return 
+
 }
 
 // get a speciffic blog with the date, author, title and tdr

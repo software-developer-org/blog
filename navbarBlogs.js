@@ -9,20 +9,31 @@ function createData() {
             id: "2",
             title: "Second title"
         },
+        {
+            id: "3",
+            title: "third title"
+        },
     ];
 
     // Create a ol element
     var ol = document.createElement('ol');
 
     //Append it to the navbar
-    document.getElementsByClassName('navbar');
-    document.body.appendChild(ol);
+    // document.getElementsByClassName('navbar');
+    const navElement = document.getElementById('navBlogTitles');
 
-    for (var i = 0; i < blogs.length; i++) {
-        var li = document.createElement('li');
-        li.innerHTML = blogs[i];
-        ol.appendChild(li);
-    }
+    blogs.forEach(blog => {
+        const blogLink = document.createElement('a');
+        navElement.appendChild(blogLink);
+    })
+
+    // document.body.appendChild(ol);
+
+    // for (var i = 0; i < blogs.length; i++) {
+    //     var li = document.createElement('li');
+    //     li.innerHTML = blogs[i];
+    //     ol.appendChild(li);
+    // }
 };
 
 createData();

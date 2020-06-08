@@ -1,10 +1,7 @@
 // Adding dummy datas to the nav bar
-import BlogData from './backend/contract.js' 
-const blogData = new BlogData();
 
- import { getBlogs } from './backend/contract.js';
-    
-    getBlogs();
+function blogTitles() {
+    console.log("blogTitles");
 
     // Create an ordered list (ol) element
     var ol = document.createElement('ol');
@@ -32,29 +29,8 @@ const blogData = new BlogData();
 
         navElement.appendChild(blogLink);
     });
+}
 
 function showContent(id) {
     console.log('>>>>TODO show content', id);
 }
-
-
-/*
-// Blog button functions on click
-function blogFunction() {
-    let blog = document.getElementById("summary");
-    blog.style.opacity = 0;
-
-    let blog1 = document.getElementById("fullpage");
-    blog1.style.opacity = 100;
-}
-
-
-// About button functions on click
-function aboutFunction() {
-    let about = document.getElementById("about");
-    about.style.opacity = 0;
-
-    let teamM = document.getElementById("team");
-    teamM.style.opacity = 100;
-}
-*/

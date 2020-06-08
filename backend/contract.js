@@ -1,7 +1,7 @@
 // ------Dummy Data------
 
 // blog dummy
-export default class BlogData {
+class BlogData {
 
     title;
     id;
@@ -33,7 +33,7 @@ class TeamData {
 // -----BLOGS-----
 
 // get all blogs with titles 
-export function getBlogs() {
+function getBlogs() {
     const blogResult = [];
 
     for (var i = 0; i < 5; i++) {
@@ -44,7 +44,7 @@ export function getBlogs() {
         blogData.date = "Date" + i;
         blogResult.push(blogData);
     }
-    console.log(blogResult);
+    //console.log(blogResult);
     return blogResult;
 }
 getBlogs();
@@ -77,10 +77,9 @@ function getBooks() {
         bookData.url = "url" + i;
         bookResult.push(bookData);
     }
-    console.log(bookResult);
+    //console.log(bookResult);
     return bookResult;
 }
-getBooks();
 
 // get a speciffic bookmark with title and summary
 function showBook(id) {
@@ -108,10 +107,9 @@ function fullTeam(iname) {
         teamData.bio = "TM Bio" + i;
         teamResult.push(teamData);         
     }
-    console.log(teamResult);
+    //console.log(teamResult);
     return teamResult;
 }
-fullTeam();
 
 
 // ------ADD FUNCTION------

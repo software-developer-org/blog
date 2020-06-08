@@ -1,7 +1,7 @@
 // ------Dummy Data------
 
 // blog dummy
-class BlogData {
+export default class BlogData {
 
     title;
     id;
@@ -9,6 +9,8 @@ class BlogData {
     author;
     tldr;
     content;
+
+    
 }
 
 // bookmark dummy
@@ -31,8 +33,8 @@ class TeamData {
 // -----BLOGS-----
 
 // get all blogs with titles 
-function getBlogs() {
-    const result = [];
+export function getBlogs() {
+    const blogResult = [];
 
     for (var i = 0; i < 5; i++) {
         const blogData = new BlogData();
@@ -40,16 +42,16 @@ function getBlogs() {
         blogData.id = "ID" + i;
         blogData.author = "Author" + i;
         blogData.date = "Date" + i;
-        result.push(blogData);
+        blogResult.push(blogData);
     }
-    console.log(result);
-    return result;
+    console.log(blogResult);
+    return blogResult;
 }
 getBlogs();
 
 // get a speciffic blog with the date, author, title and tdr
 function showBlog(id) {
-
+    
     return
 }
 
@@ -64,8 +66,21 @@ function fullBlog(id) {
 //get all bookmarks with titles
 function getBooks() {
 
-    return
+    const bookResult = [];
+
+    for (var i = 0; i < 5; i++) {
+        const bookData = new BookData();
+        bookData.title = "Bookmark" + i;
+        bookData.id = "ID" + i;
+        bookData.author = "Author" + i;
+        bookData.date = "Date" + i;
+        bookData.url = "url" + i;
+        bookResult.push(bookData);
+    }
+    console.log(bookResult);
+    return bookResult;
 }
+getBooks();
 
 // get a speciffic bookmark with title and summary
 function showBook(id) {
@@ -85,8 +100,18 @@ function fullBook(id) {
 // get bio of speciffic member
 function fullTeam(iname) {
 
-    return
+    const teamResult = ["Tai Truong", "Ragip Gashi", "Rouven Gonzalez"];
+
+    for(var i = 0; i < 3; i++) {
+        const teamData = new TeamData();
+        teamData.name = "Name" + i;
+        teamData.bio = "TM Bio" + i;
+        teamResult.push(teamData);         
+    }
+    console.log(teamResult);
+    return teamResult;
 }
+fullTeam();
 
 
 // ------ADD FUNCTION------

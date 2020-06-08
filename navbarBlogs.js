@@ -1,28 +1,19 @@
 // Adding dummy datas to the nav bar
- function createData() {
-    
-    const blogs = [
-        {
-            id: "1",
-            title: "First title"
-        },
-        {
-            id: "2",
-            title: "Second title"
-        },
-        {
-            id: "3",
-            title: "third title"
-        },
-    ];
+import BlogData from './backend/contract.js' 
+const blogData = new BlogData();
 
-    // Create a ol element
+ import { getBlogs } from './backend/contract.js';
+    
+    getBlogs();
+
+    // Create an ordered list (ol) element
     var ol = document.createElement('ol');
 
-    //Append it to the navbar
+    // Get the navElement with the ID we created in html file, blog.html
     const navElement = document.getElementById('navBlogTitles');
-
-    blogs.forEach(blog => {
+    
+    //Append it to the navbar
+    getBlogs().forEach(blog => {
         // create a-tag for blog link
         const blogLink = document.createElement('a');
         // fill attributes
@@ -40,14 +31,14 @@
         h4Element.appendChild(titleContent);
 
         navElement.appendChild(blogLink);
-    })
-};
+    });
 
 function showContent(id) {
     console.log('>>>>TODO show content', id);
 }
-createData();
 
+
+/*
 // Blog button functions on click
 function blogFunction() {
     let blog = document.getElementById("summary");
@@ -66,3 +57,4 @@ function aboutFunction() {
     let teamM = document.getElementById("team");
     teamM.style.opacity = 100;
 }
+*/

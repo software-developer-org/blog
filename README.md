@@ -85,7 +85,7 @@ npm install --save-dev jest
 ```
 {
   "scripts": {
-    "test": **"jest"**
+    "test": "jest"
   }
 }
 ```
@@ -94,7 +94,7 @@ npm install --save-dev jest
 ```
 {
   "scripts": {
-    "test": **"jest --coverage"**
+    "test": "jest --coverage"
   }
 }
 ```

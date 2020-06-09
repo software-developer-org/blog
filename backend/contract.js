@@ -8,9 +8,7 @@ class BlogData {
     date;
     author;
     tldr;
-    content;
-
-    
+    content; 
 }
 
 // bookmark dummy
@@ -47,15 +45,14 @@ function getBlogs() {
     //console.log(blogResult);
     return blogResult;
 }
-getBlogs();
 
-// get a speciffic blog with the date, author, title and tdr
+// get a specific blog with the date, author, title and tdr
 function showBlog(id) {
     
     return
 }
 
-// get a speciffic blog with title and full content
+// get a specific blog with title and full content
 function fullBlog(id) {
 
     return
@@ -77,17 +74,16 @@ function getBooks() {
         bookData.url = "url" + i;
         bookResult.push(bookData);
     }
-    //console.log(bookResult);
     return bookResult;
 }
 
-// get a speciffic bookmark with title and summary
+// get a specific bookmark with title and summary
 function showBook(id) {
 
     return
 }
 
-// get speciffic bookmark url
+// get specific bookmark url
 function fullBook(id) {
 
     return
@@ -96,10 +92,10 @@ function fullBook(id) {
 
 // -----About------
 
-// get bio of speciffic member
-function fullTeam(iname) {
+// get bio of specific member
+function fullTeam() {
 
-    const teamResult = ["Tai Truong", "Ragip Gashi", "Rouven Gonzalez"];
+    const teamResult = [];
 
     for(var i = 0; i < 3; i++) {
         const teamData = new TeamData();
@@ -107,7 +103,6 @@ function fullTeam(iname) {
         teamData.bio = "TM Bio" + i;
         teamResult.push(teamData);         
     }
-    //console.log(teamResult);
     return teamResult;
 }
 

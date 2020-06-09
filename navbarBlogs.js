@@ -1,7 +1,5 @@
-// Adding dummy datas to the nav bar
-
+// Adding dummy datas to the Blog's navbar
 function blogTitles() {
-    console.log("blogTitles");
 
     // Create an ordered list (ol) element
     var ol = document.createElement('ol');
@@ -17,7 +15,7 @@ function blogTitles() {
         blogLink.setAttribute('id', blog.id);
         // onclick
         blogLink.onclick = (event) => {
-            showContent(blog.id);
+            showBlogContent(blog.id);
         };
 
         // create h4 element for title as child of blog link
@@ -31,6 +29,6 @@ function blogTitles() {
     });
 }
 
-function showContent(id) {
+function showBlogContent(id) {
     console.log('>>>>TODO show content', id);
 }

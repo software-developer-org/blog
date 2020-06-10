@@ -8,7 +8,7 @@ class BlogData {
     date;
     author;
     tldr;
-    content; 
+    content;
 }
 
 // bookmark dummy
@@ -32,24 +32,26 @@ class TeamData {
 
 // get all blogs with titles 
 function getBlogs() {
-    const blogResult = [];
+    const url = 'https://api.github.com/repos/software-developer-org/blog/contents/blogs'
+    const result = fetch(url)
+        .then((response) => {
+            const data = response.json()
+            return data;
+        })
+        .then((data) => {
+            console.log(data);
+            const result = data.map(element => element.name);
+            console.log(result);
+            return result;
 
-    for (var i = 0; i < 5; i++) {
-        const blogData = new BlogData();
-        blogData.title = "Blog" + i;
-        blogData.id = "ID" + i;
-        blogData.author = "Author" + i;
-        blogData.date = "Date" + i;
-        blogResult.push(blogData);
-    }
-    //console.log(blogResult);
-    return blogResult;
-}
-module.exports = getBlogs;
+        });
+        return result;
+
+};
 
 // get a specific blog with the date, author, title and tdr
 function showBlog(id) {
-    
+
     return
 }
 

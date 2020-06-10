@@ -8,25 +8,27 @@ function blogTitles() {
     const navElement = document.getElementById('navBlogTitles');
     
     //Append it to the navbar
-    getBlogs().forEach(blog => {
+    getBlogs().then(element => {
+        element.forEach(blogname => {
+    
         // create a-tag for blog link
         const blogLink = document.createElement('a');
         // fill attributes
-        blogLink.setAttribute('id', blog.id);
+        blogLink.setAttribute('id', element);
         // onclick
         blogLink.onclick = (event) => {
-            showBlogContent(blog.id);
+            showBlogContent(blogname);
         };
 
         // create h4 element for title as child of blog link
         const h4Element = document.createElement('h4');
         blogLink.appendChild(h4Element);
         // create text content for title text
-        const titleContent = document.createTextNode(blog.title);
+        const titleContent = document.createTextNode(blogname);
         h4Element.appendChild(titleContent);
 
         navElement.appendChild(blogLink);
-    });
+    })});
 }
 
 function showBlogContent(id) {

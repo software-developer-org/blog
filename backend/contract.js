@@ -49,22 +49,6 @@ function getBlogs() {
 
 };
 
-/*
-const blogResult = [];
-
-for (var i = 0; i < 5; i++) {
-    const blogData = new BlogData();
-    blogData.title = "Blog" + i;
-    blogData.id = "ID" + i;
-    blogData.author = "Author" + i;
-    blogData.date = "Date" + i;
-    blogResult.push(blogData);
-}
-//console.log(blogResult);
-return blogResult;
-*/
-
-
 // get a specific blog with the date, author, title and tdr
 function showBlog(id) {
 

@@ -72,4 +72,44 @@ Blog routes:
 - dashboard
 - login/
  
+# Setup Unit tests
 
+## Start with installing and setup jest
+
+- open bash and type:
+```
+npm install --save-dev jest
+```
+
+- now open your package.json file and change this section as shown:
+```
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+```
+
+- you can aditionaly change it to:
+```
+{
+  "scripts": {
+    "test": "jest --coverage"
+  }
+}
+```
+this option will create an html file after running your tests that provides you with extra information about what you have and have not tested jet.
+
+## Write and Run your own Unit tests
+
+- to get a detailed instruction how to write your own unit tests go to 
+[jest doc](https://jestjs.io/docs/en/getting-started)
+
+- or for a quick overview
+[jest cheatsheet](https://devhints.io/jest)
+
+
+ **To run your tests now you only have to use this bash command**
+ ```
+ npm test <filename>
+ ```

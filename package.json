@@ -4,7 +4,8 @@
   "description": "blog app projekt",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "e2e": "cypress open"
   },
   "repository": {
     "type": "git",

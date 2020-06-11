@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="navbarBooks.js">
+    </script>
+    <script type="text/javascript" src="contract.js">
+    </script>
+
+    <title>Bookmark Page Setup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">Software-Developer/Bookmark-Header
+        <button id="btnLogin">Login</button>
+        <button id="btnBack"><a href="#" onclick="history.go(-1);return false">Back</a></button>
+        <button id="btnBlog"><a href="blog.html">Blog</a></button>
+        <button id="btnBookmarks"><a href="bookmark.html">Bookmarks</a></button>
+        <button id="btnAbout"><a href="about.html">About</a></button>
+    </div>
+
+    <div class="overview">
+
+        <button id='add'>add</button>
+
+        <a href="bookmark.html">
+            <div id='book1'>
+                <h2>link</h2>
+                <p>some important information or description </p>
+            </div>
+        </a>
+
+        <a href="bookmark.html">
+            <div id='book2'>
+                <h2>link</h2>
+                <p>some important information or description </p>
+            </div>
+        </a>
+
+        <a href="bookmark.html">
+            <div id='book3'>
+                <h2>link</h2>
+                <p>some important information or description </p>
+            </div>
+        </a>
+
+        <a href="bookmark.html">
+            <div id='book4'>
+                <h2>link</h2>
+                <p>some important information or description </p>
+            </div>
+        </a>
+
+        <a href="bookmark.html">
+            <div id='book5'>
+                <h2>link</h2>
+                <p>some important information or description </p>
+            </div>
+        </a>
+
+    </div>
+
+    <!-- Bookmark titles in navbar -->
+    <div id="navBarBookTitles" class="navbar">
+        <h2>Bookmark Titles</h2>
+    </div>
+
+    <script>
+        bookTitles();
+    </script>
+</body>
+
+</html>

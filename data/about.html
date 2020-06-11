@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="navbarAbout.js">
+    </script>
+    <script type="text/javascript" src="contract.js">
+    </script>
+
+    <title>About Page Setup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">Software-Developer/About-Header
+        <button id="btnLogin">Login</button>
+        <button id="btnBack"><a href="#" onclick="history.go(-1);return false">Back</a></button>
+        <button id="btnBlog"><a href="blog.html">Blog</a></button>
+        <button id="btnBookmarks"><a href="bookmark.html">Bookmarks</a></button>
+        <button id="btnAbout"><a href="about.html">About</a></button>
+    </div>
+
+    <script src="navbarBlogs.js"></script>
+
+    <div class="overview">
+
+        <!--main about overview-->
+        <div id="about">
+            <h1>Software-Developer.org</h1>
+
+            <p>Some information about the company
+                and their goals or future projekts or sommething is shown her </p>
+        </div>
+
+        <!--overview used for member data-->
+        <div id="team">
+            <h1>Team member</h1>
+
+            <p>Bio or cv of the team member is shown here</p>
+        </div>
+    </div>
+
+    <!--Nav bar team member names-->
+    <div id="navbarTeamMemberName" class="navbar">
+        <h3>About Us</h3>
+
+        <!--
+                <img src="images/Tai.jpeg" style="width:80ps;height:80px">
+        -->
+    </div>
+
+    <script>
+        aboutTeamMemberName();
+    </script>
+</body>
+
+</html>

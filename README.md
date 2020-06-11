@@ -72,9 +72,10 @@ Blog routes:
 - dashboard
 - login/
  
-# Setup Unit tests
+# Setup Unit tests with Jest
 
 ## Start with installing and setup jest
+you can skip this stepps if you clone the testBranch from this repo
 
 - open bash and type:
 ```
@@ -113,3 +114,43 @@ this option will create an html file after running your tests that provides you 
  ```
  npm test <filename>
  ```
+
+
+ # Setup e2e Testing with cypress
+
+## Start with installing and setup cypress
+you can skip the first 2 stepps if you clone the testBranch from this repo
+
+- open bash and type:
+```
+npm install --save-dev cypress
+```
+
+- now open your package.json file and change this section as shown:
+```
+{
+  "scripts": {
+    "e2e": "cypress open"
+  }
+}
+```
+
+**now to start cypress type**
+```
+npm run e2e
+```
+if it is the first time cypress will create some folders in your projekt directory
+
+
+## Write and Run your own Unit tests
+
+- to get a detailed instruction how to write your own unit tests go to 
+[cypress doc](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Add-a-test-file)
+
+- save your testfiles in ./cypress/integration
+
+start cypress with 
+```
+npm run e2e
+```
+select your test and watch cypress do the work

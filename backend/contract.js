@@ -79,7 +79,7 @@ function getBooks() {
     }
     return bookResult;
 }
-module.exports =  getBooks;
+
 
 // get a specific bookmark with title and summary
 function showBook(id) {
@@ -109,7 +109,7 @@ function fullTeam() {
     }
     return teamResult;
 }
-module.exports = fullTeam;
+
 
 
 // ------ADD FUNCTION------

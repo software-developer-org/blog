@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "blog app projekt",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/software-developer-org/blog.git"
+  },
+  "author": "software-developer.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/software-developer-org/blog/issues"
+  },
+  "homepage": "https://github.com/software-developer-org/blog#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "cypress": "4.8.0"
+  }
+}
+

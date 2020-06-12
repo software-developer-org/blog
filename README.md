@@ -75,7 +75,7 @@ Blog routes:
 # Setup Unit tests with Jest
 
 ## Start with installing and setup jest
-you can skip this stepps if you clone the testBranch from this repo
+you can skip this stepps if you clone the UnitTest branch from this repo
 
 - open bash and type:
 ```
@@ -111,15 +111,23 @@ this option will create an html file after running your tests that provides you 
 
 
  **To run your tests now you only have to use this bash command**
+
+ ```
+ npm test
+ ```
+ to run all your tests
+
+ -or
  ```
  npm test <filename>
  ```
+ to run only a speciffic test file
 
 
  # Setup e2e Testing with cypress
 
 ## Start with installing and setup cypress
-you can skip the first 2 stepps if you clone the testBranch from this repo
+you can skip this stepps if you clone the testBranch from this repo
 
 - open bash and type:
 ```

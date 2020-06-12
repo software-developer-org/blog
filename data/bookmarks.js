@@ -43,7 +43,7 @@ function showBookContent(id) {
         const bookOverview = document.createElement('div');
         bookOverview.setAttribute('id', 'bookOverview');
 
-        const bookTitleDiv = document.createElement('a');
+        const bookTitleDiv = document.createElement('div');
         bookTitleDiv.href = "http://www.w3.org/DOM/";
         bookTitleDiv.setAttribute('id', 'Bookmark');
         const bookContentDiv = document.createElement('div');
@@ -59,7 +59,7 @@ function showBookContent(id) {
         bookContentDiv.appendChild(bookContent);
 
         bookOverview.onclick = (event) => {
-            showFullBook(book.title);
+            showFullBook(book.url);
         };
 
         bookmarkElement.appendChild(bookOverview);
@@ -69,6 +69,7 @@ function showBookContent(id) {
 };
 
 function showFullBook(id) {
+    window.open('http://www.w3.org/DOM/')
     console.log('>>>>>TODO showFullBlog ' + id);
 }
 

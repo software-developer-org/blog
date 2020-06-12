@@ -10,27 +10,6 @@ function blogTitles() {
     //Append it to the navbar
     getBlogs().then(element => {
         element.forEach(blogname => {
-<<<<<<< HEAD
-    
-        // create a-tag for blog link
-        const blogLink = document.createElement('a');
-        // fill attributes
-        blogLink.setAttribute('id', blogname);
-        // onclick
-        blogLink.onclick = (event) => {
-            showBlogContent(blogname);
-        };
-
-        // create h4 element for title as child of blog link
-        const h4Element = document.createElement('h4');
-        blogLink.appendChild(h4Element);
-        // create text content for title text
-        const titleContent = document.createTextNode(blogname);
-        h4Element.appendChild(titleContent);
-
-        navElement.appendChild(blogLink);
-    })});
-=======
 
             // create a-tag for blog link
             const blogLink = document.createElement('a');
@@ -51,7 +30,6 @@ function blogTitles() {
             navElement.appendChild(blogLink);
         })
     });
->>>>>>> develop
 }
 
 function showBlogContent() {

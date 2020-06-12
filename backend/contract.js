@@ -92,11 +92,6 @@ function getBooks() {
         });
     return result;
 }
-<<<<<<< HEAD
-
-=======
-//module.exports =  getBooks;
->>>>>>> develop
 
 // get a specific bookmark with title and summary
 function showBook() {
@@ -141,11 +136,6 @@ function fullTeam() {
         });
     return result;
 }
-<<<<<<< HEAD
-
-=======
-//module.exports = fullTeam;
->>>>>>> develop
 
 
 // ------ADD FUNCTION------

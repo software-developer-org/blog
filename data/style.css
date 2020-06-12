@@ -138,6 +138,19 @@
   margin-top: 3%;
 }
 
+#bookOverview{
+  border-style: solid;
+  border-width: 1px;
+}
+#Bookmark{
+  font-weight: bold;
+  font-size: 20px;
+}
+#Content{
+  margin-top: 3%;
+}
+
+
 #fullpage{
   opacity: 0;
   z-index: 2;

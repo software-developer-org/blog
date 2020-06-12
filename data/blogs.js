@@ -33,8 +33,6 @@ function blogTitles() {
 }
 
 function showBlogContent() {
-    // Create an ordered list (ol) element
-    //var ol = document.createElement('ol');
 
     // Get the overviewElement with the ID we created in contract.js
     const overviewElement = document.getElementById('blogSummary');

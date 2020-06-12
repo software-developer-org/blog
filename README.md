@@ -75,7 +75,7 @@ Blog routes:
 # Setup Unit tests with Jest
 
 ## Start with installing and setup jest
-you can skip this stepps if you clone the UnitTest branch from this repo
+you can skip this stepps if you clone the unitTest branch from this repo
 
 - open bash and type:
 ```

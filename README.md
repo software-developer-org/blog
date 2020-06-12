@@ -15,7 +15,7 @@ git checkout develop
 ```
 - Run local server:
 ```
-> node server.js
+node app.js
 ```
 Then, load http://localhost:3000/ in a browser to see the output.
 
@@ -25,7 +25,7 @@ npm install -g nodemon
 ```
 Then use it like this:
 ```
-> nodemon server.js
+nodemon app.js
 ```
 ## References:
 
@@ -157,7 +157,12 @@ if it is the first time cypress will create some folders in your projekt directo
 
 - save your testfiles in ./cypress/integration
 
-start cypress with 
+make shure you started your server in a differnt bash window with 
+```
+nodemon app.js
+```
+
+start cypress in new bash window with 
 ```
 npm run e2e
 ```

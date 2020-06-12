@@ -17,8 +17,6 @@ class BlogData {
 class BookData {
     title;
     id;
-    date;
-    author;
     tldr;
     url;
 }
@@ -101,11 +99,10 @@ function showBook() {
     for(var i = 0; i < 3; i++) {
         const bookData = new BookData();
         bookData.id = "00 " + i;
-        bookData.title = "Blog " + i;
-        bookData.author = "Author " + i;
-        bookData.date = "Date " + i;
+        bookData.title = "Bookmark " + i;
         bookData.url = " " + i;
-        showBlogResult.push(bookData);
+        bookData.content = "Hier is some brief content to read..." + i;
+        showBookResult.push(bookData);
     }
     return showBookResult;
 }

@@ -8,25 +8,27 @@ function aboutTeamMemberName() {
     const navElement = document.getElementById('navbarTeamMemberName');
 
     //Append it to the navbar
-    fullTeam().forEach(team => {
+    fullTeam().then(element => {
+        element.forEach(teamName => {
+            
         // create a-tag for team member link
         const teamLink = document.createElement('a');
         // fill attributes
-        teamLink.setAttribute('id', team.name);
+        teamLink.setAttribute('id', element);
         // onclick
         teamLink.onclick = (event) => {
-            showAboutTMContent(team.name);
+            showAboutTMContent(teamName);
         };
 
         // create h4 element for title as child of team member link
         const h4Element = document.createElement('h4');
         teamLink.appendChild(h4Element);
         // create text content for title text
-        const titleContent = document.createTextNode(team.name);
+        const titleContent = document.createTextNode(teamName);
         h4Element.appendChild(titleContent);
 
         navElement.appendChild(teamLink);
-    });
+    })});
 }
 
 function showAboutTMContent(id) {

@@ -6,16 +6,18 @@ const fullTeam = require('./contract');
 
 
 // test getBlogs()
-test('returns an array of objects', () =>{
-    expect(getBlogs()).toBeInstanceOf(Array)
+test('getBlogs() returns an array of objects', () =>{
+    expect(getBlogs()).toBeInstanceOf(Array);
+    expect(getBlogs().length).toBeGreaterThan(0);
+
 });
 
 // test getBooks()
-test('returns an array of objects', () =>{
+test('get Books() returns an array of objects', () =>{
     expect(getBooks()).toBeInstanceOf(Array)
 });
 
 // test fullTeam()
-test('returns an array of objects', () =>{
+test('fullTeam() returns an array of objects', () =>{
     expect(fullTeam()).toBeInstanceOf(Array)
 });

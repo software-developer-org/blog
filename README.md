@@ -9,13 +9,13 @@ git clone https://github.com/software-developer-org/blog
 ```
 cd blog
 ```
-- Install the dependences for our app:
-```
-npm install
-```
 - In bash command switch the branch
 ```
 git checkout develop
+```
+- Install the dependences for our app:
+```
+npm install
 ```
 - Run local server:
 ```
@@ -23,7 +23,7 @@ node app.js
 ```
 Then, load http://localhost:3000/ in a browser to see the output.
 
-- To make server reload automatically use
+- To make server reload automatically run:
 ```
 nodemon app.js
 ```

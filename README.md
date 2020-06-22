@@ -23,11 +23,7 @@ node app.js
 ```
 Then, load http://localhost:3000/ in a browser to see the output.
 
-- To make server reload automatically, install **Node Monitor**
-```
-npm install -g nodemon
-```
-Then use it like this:
+- To make server reload automatically use
 ```
 nodemon app.js
 ```
@@ -87,7 +83,7 @@ Blog routes:
 [jest cheatsheet](https://devhints.io/jest)
 
 
- **To run your tests now you only have to use this bash command:**
+##To run your tests now you only have to use this bash command
  
 switch to the unitTest branch
 ```
@@ -115,7 +111,7 @@ git checkout unitTest
   }
 }
 ```
-this option will create an html file after running your tests that provides you with extra information about what you have and have not tested jet.
+this option will create an html file after running your tests that provides you with extra information about what you have and have not tested yet.
 
 
  # Setup e2e Testing with cypress
@@ -128,7 +124,7 @@ this option will create an html file after running your tests that provides you 
 - save your testfiles in ./cypress/integration
 
 
-**to start cypress:**
+## Start cypress like this 
 
 make shure you started your server in a differnt bash window with 
 ```

@@ -95,7 +95,6 @@ git checkout unitTest
 ```
 run the test
 ```
-```
  npm test
 ```
  to run all your tests

@@ -9,23 +9,23 @@ git clone https://github.com/software-developer-org/blog
 ```
 cd blog
 ```
+- Install the dependences for our app:
+```
+npm install
+```
 - In bash command switch the branch
 ```
 git checkout develop
 ```
 - Run local server:
 ```
-> node server.js
+node app.js
 ```
 Then, load http://localhost:3000/ in a browser to see the output.
 
-- To make server reload automatically, install **Node Monitor**
+- To make server reload automatically use
 ```
-npm install -g nodemon
-```
-Then use it like this:
-```
-> nodemon server.js
+nodemon app.js
 ```
 ## References:
 
@@ -74,33 +74,6 @@ Blog routes:
  
 # Setup Unit tests with Jest
 
-## Start with installing and setup jest
-you can skip this stepps if you clone the unitTest branch from this repo
-
-- open bash and type:
-```
-npm install --save-dev jest
-```
-
-- now open your package.json file and change this section as shown:
-```
-{
-  "scripts": {
-    "test": "jest"
-  }
-}
-```
-
-- you can aditionaly change it to:
-```
-{
-  "scripts": {
-    "test": "jest --coverage"
-  }
-}
-```
-this option will create an html file after running your tests that provides you with extra information about what you have and have not tested jet.
-
 ## Write and Run your own Unit tests
 
 - to get a detailed instruction how to write your own unit tests go to 
@@ -110,7 +83,12 @@ this option will create an html file after running your tests that provides you 
 [jest cheatsheet](https://devhints.io/jest)
 
 
- **To run your tests now you only have to use this bash command**
+##To run your tests now you only have to use this bash command
+ 
+switch to the unitTest branch
+```
+git checkout unitTest
+```
 
  ```
  npm test
@@ -123,42 +101,45 @@ this option will create an html file after running your tests that provides you 
  ```
  to run only a speciffic test file
 
+## Setup jest
 
- # Setup e2e Testing with cypress
-
-## Start with installing and setup cypress
-you can skip this stepps if you clone the testBranch from this repo
-
-- open bash and type:
-```
-npm install --save-dev cypress
-```
-
-- now open your package.json file and change this section as shown:
+- you can aditionaly change your package.json like this:
 ```
 {
   "scripts": {
-    "e2e": "cypress open"
+    "test": "jest --coverage"
   }
 }
 ```
-
-**now to start cypress type**
-```
-npm run e2e
-```
-if it is the first time cypress will create some folders in your projekt directory
+this option will create an html file after running your tests that provides you with extra information about what you have and have not tested yet.
 
 
-## Write and Run your own Unit tests
+ # Setup e2e Testing with cypress
+ 
+ ## Write and Run your own Unit tests
 
 - to get a detailed instruction how to write your own unit tests go to 
 [cypress doc](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Add-a-test-file)
 
 - save your testfiles in ./cypress/integration
 
-start cypress with 
+
+## Start cypress like this 
+
+make shure you started your server in a differnt bash window with 
+```
+nodemon app.js
+```
+switch to the testBranch
+```
+git checkout testBranch
+```
+
+start cypress in new bash window with 
 ```
 npm run e2e
 ```
+if it is the first time cypress will create some folders in your projekt directory
+
 select your test and watch cypress do the work
+

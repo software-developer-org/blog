@@ -78,33 +78,6 @@ Blog routes:
  
 # Setup Unit tests with Jest
 
-## Start with installing and setup jest
-you can skip this stepps if you clone the unitTest branch from this repo
-
-- open bash and type:
-```
-npm install --save-dev jest
-```
-
-- now open your package.json file and change this section as shown:
-```
-{
-  "scripts": {
-    "test": "jest"
-  }
-}
-```
-
-- you can aditionaly change it to:
-```
-{
-  "scripts": {
-    "test": "jest --coverage"
-  }
-}
-```
-this option will create an html file after running your tests that provides you with extra information about what you have and have not tested jet.
-
 ## Write and Run your own Unit tests
 
 - to get a detailed instruction how to write your own unit tests go to 
@@ -114,7 +87,7 @@ this option will create an html file after running your tests that provides you 
 [jest cheatsheet](https://devhints.io/jest)
 
 
- **To run your tests now you only have to use this bash command**
+ **To run your tests now you only have to use this bash command:**
  
 switch to the unitTest branch
 ```
@@ -132,39 +105,30 @@ git checkout unitTest
  ```
  to run only a speciffic test file
 
+## Setup jest
 
- # Setup e2e Testing with cypress
-
-## Start with installing and setup cypress
-you can skip this stepps if you clone the testBranch from this repo
-
-- open bash and type:
-```
-npm install --save-dev cypress
-```
-
-- now open your package.json file and change this section as shown:
+- you can aditionaly change your package.json like this:
 ```
 {
   "scripts": {
-    "e2e": "cypress open"
+    "test": "jest --coverage"
   }
 }
 ```
-
-**now to start cypress type**
-```
-npm run e2e
-```
-if it is the first time cypress will create some folders in your projekt directory
+this option will create an html file after running your tests that provides you with extra information about what you have and have not tested jet.
 
 
-## Write and Run your own Unit tests
+ # Setup e2e Testing with cypress
+ 
+ ## Write and Run your own Unit tests
 
 - to get a detailed instruction how to write your own unit tests go to 
 [cypress doc](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Add-a-test-file)
 
 - save your testfiles in ./cypress/integration
+
+
+**to start cypress:**
 
 make shure you started your server in a differnt bash window with 
 ```
@@ -179,4 +143,7 @@ start cypress in new bash window with
 ```
 npm run e2e
 ```
+if it is the first time cypress will create some folders in your projekt directory
+
 select your test and watch cypress do the work
+

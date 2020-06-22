@@ -27,11 +27,6 @@ node app.js
 ```
 Then, load http://localhost:3000/ in a browser to see the output.:
 
-<<<<<<< HEAD
-=======
-- To make server reload automatically run:
-
->>>>>>> 29af752825199b2751754ff179af65ad93c5445b
 - To make server reload automatically use
 ```
 nodemon app.js
@@ -97,17 +92,12 @@ Blog routes:
 switch to the unitTest branch
 ```
 git checkout unitTest
-<<<<<<< HEAD
 ```
 run the test
 ```
-=======
- ```
->>>>>>> 29af752825199b2751754ff179af65ad93c5445b
- npm test
+npm test
 ```
  to run all your tests
-```
  -or
  ```
  npm test <filename>

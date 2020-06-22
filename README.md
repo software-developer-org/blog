@@ -115,6 +115,11 @@ this option will create an html file after running your tests that provides you 
 
 
  **To run your tests now you only have to use this bash command**
+ 
+switch to the unitTest branch
+```
+git checkout unitTest
+```
 
  ```
  npm test
@@ -164,6 +169,10 @@ if it is the first time cypress will create some folders in your projekt directo
 make shure you started your server in a differnt bash window with 
 ```
 nodemon app.js
+```
+switch to the testBranch
+```
+git checkout testBranch
 ```
 
 start cypress in new bash window with 

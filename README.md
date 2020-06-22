@@ -27,11 +27,9 @@ node app.js
 ```
 Then, load http://localhost:3000/ in a browser to see the output.
 
-<<<<<<< HEAD
 - To make server reload automatically run:
-=======
+
 - To make server reload automatically use
->>>>>>> unitTest
 ```
 nodemon app.js
 ```
@@ -91,13 +89,11 @@ Blog routes:
 [jest cheatsheet](https://devhints.io/jest)
 
 
-##To run your tests now you only have to use this bash command
+## To run your tests now you only have to use this bash command
  
 switch to the unitTest branch
 ```
 git checkout unitTest
-```
-
  ```
  npm test
  ```

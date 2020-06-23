@@ -19,6 +19,7 @@ git checkout develop
 ```
 - Install the dependences for our app:
 ```
+<<<<<<< HEAD
 npm install
 ```
 - Run local server:
@@ -26,6 +27,11 @@ npm install
 node app.js
 ```
 Then, load http://localhost:3000/ in a browser to see the output.:
+=======
+node app.js
+```
+Then, load http://localhost:3000/ in a browser to see the output.
+>>>>>>> testBranch
 
 - To make server reload automatically use
 ```
@@ -87,7 +93,7 @@ Blog routes:
 [jest cheatsheet](https://devhints.io/jest)
 
 
-## To run your tests now you only have to use this bash command
+##To run your tests now you only have to use this bash command
  
 switch to the unitTest branch
 ```

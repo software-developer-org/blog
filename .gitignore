@@ -1,2 +1,4 @@
 # node
 node_modules 
+.eslintrc.json
+e2e/package-lock.json

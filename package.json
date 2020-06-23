@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "blog app projekt",
   "main": "app.js",
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/software-developer-org/blog.git"
@@ -17,5 +16,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.0"
   }
 }

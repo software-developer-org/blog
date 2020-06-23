@@ -1,5 +1,5 @@
 describe('Testing blog navbar contract', () =>{
-    it('direct to our local server', () =>{
+    beforeEach('direct to our local server', () =>{
         cy.visit('http://localhost:3000')
 
     })

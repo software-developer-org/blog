@@ -134,7 +134,7 @@ showBlog = jest.fn(() => {
 
 })
 
-// test blogTitles
+// test blogTitles()
 test('blogTitles() processed array data', () => {
 blogTitles();
 expect(getBlogs).toHaveBeenCalled();

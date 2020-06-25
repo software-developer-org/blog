@@ -87,7 +87,7 @@ Blog routes:
 [jest cheatsheet](https://devhints.io/jest)
 
 
-##To run your tests now you only have to use this bash command
+## To run your tests now you only have to use this bash command
  
 switch to the backend folder
 ```

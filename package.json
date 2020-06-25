@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "blog app projekt",
   "main": "app.js",
+  "scripts": {
+    "nodemon": "nodemon"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/software-developer-org/blog.git"

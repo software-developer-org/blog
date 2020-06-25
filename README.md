@@ -19,7 +19,6 @@ git checkout develop
 ```
 - Install the dependences for our app:
 ```
-<<<<<<< HEAD
 npm install
 ```
 - Run local server:
@@ -27,15 +26,10 @@ npm install
 node app.js
 ```
 Then, load http://localhost:3000/ in a browser to see the output.:
-=======
-node app.js
-```
-Then, load http://localhost:3000/ in a browser to see the output.
->>>>>>> testBranch
 
-- To make server reload automatically use
+To make server reload automatically use
 ```
-nodemon app.js
+npm run nodemon app.js
 ```
 ## References:
 
@@ -95,21 +89,26 @@ Blog routes:
 
 ##To run your tests now you only have to use this bash command
  
-switch to the unitTest branch
+switch to the backend folder
 ```
-git checkout unitTest
+cd backend
 ```
-run the test
+
+if its your first time execute
+```
+npm install
+```
+
+to run all your tests use 
 ```
 npm test
 ```
- to run all your tests
- -or
+
+ or to run only a speciffic test file
  ```
  npm test <filename>
  ```
- to run only a speciffic test file
-
+ 
 ## Setup jest
 
 - you can aditionaly change your package.json like this:
@@ -137,11 +136,17 @@ this option will create an html file after running your tests that provides you 
 
 make shure you started your server in a differnt bash window with 
 ```
-nodemon app.js
+ npm run nodemon app.js
 ```
-switch to the testBranch
+
+switch to the e2e folder
 ```
-git checkout testBranch
+cd e2e
+```
+
+if its your first time execute
+```
+npm install
 ```
 
 start cypress in new bash window with 

@@ -64,7 +64,6 @@ function showBookContent() {
         };
 
 
-        console.log(bookmarkElement);
     })
 };
 

@@ -74,7 +74,6 @@ function showBlogContent() {
                 showFullBlog(blog.title);
             };
 
-            console.log(overviewElement);
     });
 }
 

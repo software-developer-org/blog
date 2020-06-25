@@ -1,7 +1,10 @@
-describe('Testing blog header contract', () => {
-    beforeEach('direct to our local server', () => {
-        cy.visit('http://localhost:3000')
+import { PageObject } from "../pageObject/pageObject"
 
+describe('Testing blog header contract', () => {
+    const page = new PageObject();
+
+    beforeEach('direct to our local server', () => {
+        page.navigate();
     })
 
     it('check for header content', () => {

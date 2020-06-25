@@ -1,27 +1,16 @@
-import {PageObject} from "../pageObject/pageObject"
+import { PageObject } from "../pageObject/pageObject"
 
-describe('Testing bookmark navbar contract', () =>{
+describe('Testing bookmark navbar contract', () => {
     const page = new PageObject();
-    beforeEach('direct to our local server', () =>{
+    beforeEach('direct to our local server', () => {
         page.navigate();
-
     })
-    
-    it('check for navbar content', () =>{
-        
-        
-        /*
-        // Click on the Bookmark button
-        cy.get('#btnBookmarks').click();
-        // Click on the 1st bookmark to test if it is empty or not
-        cy.get(':nth-child(2) > h4').click();
-        cy.get('#Book1').should('not.be.empty');
 
-        cy.get(':nth-child(3) > h4').click();
-        cy.get('#Book2').should('not.be.empty');
+    it('check for navbar content', () => {
+        page.checkNavbarBookmark(2);
 
-        cy.get(':nth-child(4) > h4').click();
-        cy.get('#Book3').should('not.be.empty');
-        */
+        page.checkNavbarBookmark(3);
+
+        page.checkNavbarBookmark(4);
     })
 })

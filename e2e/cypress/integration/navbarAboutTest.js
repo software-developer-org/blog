@@ -1,21 +1,16 @@
-describe('Testing about navbar contract', () =>{
-    beforeEach('direct to our local server', () =>{
-        cy.visit('http://localhost:3000')
+import { PageObject } from "../pageObject/pageObject"
 
+describe('Testing about navbar contract', () => {
+    const page = new PageObject();
+    beforeEach('direct to our local server', () => {
+        page.navigate();
     })
-    
-    it('check for navbar content', () =>{
-        // Click on the About button
-        cy.get('#btnAbout').click();
-        // Click on the 1st team member
-        cy.get(':nth-child(2) > h4').click();
-        // See if this element is empty
-        cy.get('Ragip Gashi').should('not.be.empty');
 
-        cy.get(':nth-child(3) > h4').click();
-        cy.get('Rouven Gonzalez').should('not.be.empty');
+    it('check for navbar content', () => {
+        page.checkNavbarAbout(2);
 
-        cy.get(':nth-child(4) > h4').click();
-        cy.get('Tai Troung').should('not.be.empty');
+        page.checkNavbarAbout(3);
+
+        page.checkNavbarAbout(4);
     })
 })

@@ -12,6 +12,5 @@ describe('Testing blog navbar contract', () => {
         page.checkNavbarBlogs(3);
 
         page.checkNavbarBlogs(4);
-
     })
 })

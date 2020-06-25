@@ -14,7 +14,7 @@ function blogTitles() {
             // create a-tag for blog link
             const blogLink = document.createElement('a');
             // fill attributes
-            blogLink.setAttribute('id', blogname);
+            blogLink.setAttribute('id', 'blog');
             // onclick
             blogLink.onclick = (event) => {
                 showFullBlog(blogname);

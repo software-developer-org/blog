@@ -134,7 +134,7 @@ this option will create an html file after running your tests that provides you 
 
 ## Start cypress like this 
 
-make shure you started your server in a differnt bash window with 
+make sure you started your server in a differnt bash window with 
 ```
  npm run nodemon app.js
 ```

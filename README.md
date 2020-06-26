@@ -9,10 +9,6 @@ git clone https://github.com/software-developer-org/blog
 ```
 cd blog
 ```
-- Install the dependences for our app:
-```
-npm install
-```
 - In bash command switch the branch
 ```
 git checkout develop

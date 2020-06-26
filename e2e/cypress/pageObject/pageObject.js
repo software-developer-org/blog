@@ -1,22 +1,22 @@
 export class PageObject {
     navigate() {
-        cy.visit('http://localhost:3000')
+        cy.visit('http://localhost:3000');
     }
 
     checkHeaderButtons(buttonID) {
   // Click on the button
   cy.get(`#btn${buttonID} > a`).click();
   cy.location().should((loc) => {
-      expect(loc.pathname).to.eq(`/${buttonID.toLowerCase()}.html`)
-  })
+      expect(loc.pathname).to.eq(`/${buttonID.toLowerCase()}.html`);
+  });
     }
 
     checkBackButton(){
         cy.get('#btnAbout >a').click();
         cy.get('#btnBack > a').click();
         cy.location().should((loc) => {
-        expect(loc.href).to.eq('http://localhost:3000/')
-    })
+        expect(loc.href).to.eq('http://localhost:3000/');
+    });
     }
 
     checkNavbarBlogs(blogNubmer) {
@@ -28,7 +28,7 @@ export class PageObject {
 
     checkNavbarBookmark(bookmarkNumber) {
         // Click on the Bookmark button
-        cy.get('#btnBookmarks').click();
+        cy.get('#btnBookmark').click();
         // Click on the 1st bookmark to test if it is empty or not
         cy.get(`:nth-child(${bookmarkNumber}) > h4`).click().should('not.be.empty');
     }
@@ -50,7 +50,7 @@ export class PageObject {
 
     checkBookmarkOverview(bookmarOvNumber) {
         // Click on Bookmark button
-        cy.get('#btnBookmarks > a').click();
+        cy.get('#btnBookmark > a').click();
         // Click on the overview Bookmark title to get the Bookmark
         cy.get(`:nth-child(${bookmarOvNumber}) > #Bookmark`).click();
         // Get the content of the 1st Bookmark 

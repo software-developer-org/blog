@@ -8,8 +8,8 @@ function bookTitles() {
     const navElement = document.getElementById('navBarBookTitles');
 
     //Append it to the navbar
-    getBooks().then(element => {
-        element.forEach(bookname => {
+    getBooks().then((element) => {
+        element.forEach((bookname) => {
 
             // create a-tag for bookmark link
             const bookLink = document.createElement('a');
@@ -27,7 +27,7 @@ function bookTitles() {
             h4Element.appendChild(titleContent);
 
             navElement.appendChild(bookLink);
-        })
+        });
     });
 }
 
@@ -37,7 +37,7 @@ function showBookContent(id) {
     const bookmarkElement = document.getElementById('bookmarkSummary');
 
     // Append it to the overview block
-    showBook().forEach(book => {
+    showBook().forEach((book) => {
 
         // Create a divs for blog overview
         const bookOverview = document.createElement('div');
@@ -65,11 +65,11 @@ function showBookContent(id) {
         bookmarkElement.appendChild(bookOverview);
 
         console.log(bookmarkElement);
-    })
-};
+    });
+}
 
 function showFullBook(id) {
-    window.open('http://www.w3.org/DOM/')
+    window.open('http://www.w3.org/DOM/');
     console.log('>>>>>TODO showFullBlog ' + id);
 }
 

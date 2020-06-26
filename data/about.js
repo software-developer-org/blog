@@ -8,8 +8,8 @@ function aboutTeamMemberName() {
     const navElement = document.getElementById('navbarTeamMemberName');
 
     //Append it to the navbar
-    fullTeam().then(element => {
-        element.forEach(teamName => {
+    fullTeam().then((element) => {
+        element.forEach((teamName) => {
             
         // create a-tag for team member link
         const teamLink = document.createElement('a');
@@ -28,7 +28,8 @@ function aboutTeamMemberName() {
         h4Element.appendChild(titleContent);
 
         navElement.appendChild(teamLink);
-    })});
+    });
+});
 }
 
 function showAboutTMContent(id) {

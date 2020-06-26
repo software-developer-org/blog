@@ -8,8 +8,8 @@ function blogTitles() {
     const navElement = document.getElementById('navBlogTitles');
 
     //Append it to the navbar
-    getBlogs().then(element => {
-        element.forEach(blogname => {
+    getBlogs().then((element) => {
+        element.forEach((blogname) => {
 
             // create a-tag for blog link
             const blogLink = document.createElement('a');
@@ -28,7 +28,7 @@ function blogTitles() {
             h4Element.appendChild(titleContent);
 
             navElement.appendChild(blogLink);
-        })
+        });
     });
 }
 
@@ -38,7 +38,7 @@ function showBlogContent() {
     const overviewElement = document.getElementById('blogSummary');
 
     // Append it to the overview block
-    showBlog().forEach(blog => {
+    showBlog().forEach((blog) => {
 
             // Create a divs for blog overview
             const blogOverview = document.createElement('div');

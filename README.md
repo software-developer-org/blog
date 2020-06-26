@@ -87,7 +87,7 @@ Blog routes:
 [jest cheatsheet](https://devhints.io/jest)
 
 
-##To run your tests now you only have to use this bash command
+## To run your tests now you only have to use this bash command
  
 switch to the backend folder
 ```
@@ -134,7 +134,7 @@ this option will create an html file after running your tests that provides you 
 
 ## Start cypress like this 
 
-make shure you started your server in a differnt bash window with 
+make sure you started your server in a differnt bash window with 
 ```
  npm run nodemon app.js
 ```

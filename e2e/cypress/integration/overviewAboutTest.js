@@ -1,17 +1,17 @@
-import { PageObject } from "../pageObject/pageObject";
+import { PageObject } from '../pageObject/pageObject';
 
 describe('Testing about overview contract', () => {
-    const page = new PageObject();
+  const page = new PageObject();
 
-    beforeEach('direct to our local server', () => {
-        page.navigate();
-    });
+  beforeEach('direct to our local server', () => {
+    page.navigate();
+  });
 
-    it('check for overview content', () => {
-        page.checkAboutOverview(2);
+  it('check for overview content', () => {
+    page.checkAboutOverview(2);
 
-        page.checkAboutOverview(3);
-        
-        page.checkAboutOverview(4);
-    });
+    page.checkAboutOverview(3);
+
+    page.checkAboutOverview(4);
+  });
 });

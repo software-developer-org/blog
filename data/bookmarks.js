@@ -1,75 +1,70 @@
 // Adding dummy datas to the Bookmark's navbar
 function bookTitles() {
+  // Create an ordered list (ol) element
+  var ol = document.createElement('ol');
 
-    // Create an ordered list (ol) element
-    var ol = document.createElement('ol');
+  // Get the navElement with the ID we created in html file, bookmark.html
+  const navElement = document.getElementById('navBarBookTitles');
 
-    // Get the navElement with the ID we created in html file, bookmark.html
-    const navElement = document.getElementById('navBarBookTitles');
+  //Append it to the navbar
+  getBooks().then((element) => {
+    element.forEach((bookname) => {
+      // create a-tag for bookmark link
+      const bookLink = document.createElement('a');
+      // fill attributes
+      bookLink.setAttribute('id', element);
+      // onclick
+      bookLink.onclick = (event) => {
+        showFullBook(bookname);
+      };
+      // create h4 element for title as child of bookmark link
+      const h4Element = document.createElement('h4');
+      bookLink.appendChild(h4Element);
+      // create text content for title text
+      const titleContent = document.createTextNode(bookname);
+      h4Element.appendChild(titleContent);
 
-    //Append it to the navbar
-    getBooks().then((element) => {
-        element.forEach((bookname) => {
-
-            // create a-tag for bookmark link
-            const bookLink = document.createElement('a');
-            // fill attributes
-            bookLink.setAttribute('id', element);
-            // onclick
-            bookLink.onclick = (event) => {
-                showFullBook(bookname);
-            };
-            // create h4 element for title as child of bookmark link
-            const h4Element = document.createElement('h4');
-            bookLink.appendChild(h4Element);
-            // create text content for title text
-            const titleContent = document.createTextNode(bookname);
-            h4Element.appendChild(titleContent);
-
-            navElement.appendChild(bookLink);
-        });
+      navElement.appendChild(bookLink);
     });
+  });
 }
 
 function showBookContent(id) {
+  // Get the bookmarkElement with the ID we created in contract.js
+  const bookmarkElement = document.getElementById('bookmarkSummary');
 
-    // Get the bookmarkElement with the ID we created in contract.js
-    const bookmarkElement = document.getElementById('bookmarkSummary');
+  // Append it to the overview block
+  showBook().forEach((book) => {
+    // Create a divs for blog overview
+    const bookOverview = document.createElement('div');
+    bookOverview.setAttribute('id', 'bookOverview');
 
-    // Append it to the overview block
-    showBook().forEach((book) => {
+    const bookTitleDiv = document.createElement('div');
+    bookTitleDiv.href = 'http://www.w3.org/DOM/';
+    bookTitleDiv.setAttribute('id', 'Bookmark');
+    const bookContentDiv = document.createElement('div');
+    bookContentDiv.setAttribute('id', 'Content');
 
-        // Create a divs for blog overview
-        const bookOverview = document.createElement('div');
-        bookOverview.setAttribute('id', 'bookOverview');
+    // create child divs in overview div
+    bookOverview.appendChild(bookTitleDiv);
+    bookOverview.appendChild(bookContentDiv);
 
-        const bookTitleDiv = document.createElement('div');
-        bookTitleDiv.href = "http://www.w3.org/DOM/";
-        bookTitleDiv.setAttribute('id', 'Bookmark');
-        const bookContentDiv = document.createElement('div');
-        bookContentDiv.setAttribute('id', 'Content');
+    const bookTitle = document.createTextNode(book.title);
+    bookTitleDiv.appendChild(bookTitle);
+    const bookContent = document.createTextNode(book.content);
+    bookContentDiv.appendChild(bookContent);
 
-        // create child divs in overview div
-        bookOverview.appendChild(bookTitleDiv);
-        bookOverview.appendChild(bookContentDiv);
+    bookOverview.onclick = (event) => {
+      showFullBook(book.url);
+    };
 
-        const bookTitle = document.createTextNode(book.title);
-        bookTitleDiv.appendChild(bookTitle);
-        const bookContent = document.createTextNode(book.content);
-        bookContentDiv.appendChild(bookContent);
+    bookmarkElement.appendChild(bookOverview);
 
-        bookOverview.onclick = (event) => {
-            showFullBook(book.url);
-        };
-
-        bookmarkElement.appendChild(bookOverview);
-
-        console.log(bookmarkElement);
-    });
+    console.log(bookmarkElement);
+  });
 }
 
 function showFullBook(id) {
-    window.open('http://www.w3.org/DOM/');
-    console.log('>>>>>TODO showFullBlog ' + id);
+  window.open('http://www.w3.org/DOM/');
+  console.log('>>>>>TODO showFullBlog ' + id);
 }
-

@@ -1,17 +1,17 @@
-import { PageObject } from "../pageObject/pageObject";
+import { PageObject } from '../pageObject/pageObject';
 
 describe('Testing bookmark overview contract', () => {
-    const page = new PageObject();
+  const page = new PageObject();
 
-    beforeEach('direct to our local server', () => {
-        page.navigate();
-    });
+  beforeEach('direct to our local server', () => {
+    page.navigate();
+  });
 
-    it('check for overview content', () => {
-        page.checkBookmarkOverview(2);
+  it('check for overview content', () => {
+    page.checkBookmarkOverview(2);
 
-        page.checkBookmarkOverview(3);
+    page.checkBookmarkOverview(3);
 
-        page.checkBookmarkOverview(4);
-    });
+    page.checkBookmarkOverview(4);
+  });
 });

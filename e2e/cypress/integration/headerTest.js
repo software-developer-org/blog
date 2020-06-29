@@ -1,24 +1,21 @@
-import { PageObject } from "../pageObject/pageObject";
+import { PageObject } from '../pageObject/pageObject';
 
 describe('Testing blog header contract', () => {
-    const page = new PageObject();
+  const page = new PageObject();
 
-    beforeEach('direct to our local server', () => {
-        page.navigate();
-    });
+  beforeEach('direct to our local server', () => {
+    page.navigate();
+  });
 
-    it('check for header content', () => {
-  
-        page.checkHeaderButtons("Blog");
+  it('check for header content', () => {
+    page.checkHeaderButtons('Blog');
 
-        page.checkHeaderButtons("About");
+    page.checkHeaderButtons('About');
 
-        page.checkHeaderButtons("Bookmark");
+    page.checkHeaderButtons('Bookmark');
+  });
 
-    });
-
-    it('check back button function', () => {
-        page.checkBackButton();
-    });
-
+  it('check back button function', () => {
+    page.checkBackButton();
+  });
 });

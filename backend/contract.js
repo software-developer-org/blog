@@ -88,6 +88,7 @@ function getBooks() {
     });
   return result;
 }
+module.exports = getBooks;
 
 // get a specific bookmark with title and summary
 function showBook() {
@@ -128,6 +129,7 @@ function fullTeam() {
     });
   return result;
 }
+module.exports = fullTeam;
 
 // ------ADD FUNCTION------
 

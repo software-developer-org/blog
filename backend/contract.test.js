@@ -1,39 +1,7 @@
 // import neccessary functions
 const getBlogs = require('./contract');
-
-function getBooks() {
-  const url =
-    'https://api.github.com/repos/software-developer-org/blog/contents/bookmarks';
-  const result = fetch(url)
-    .then((response) => {
-      const data = response.json();
-      return data;
-    })
-    .then((data) => {
-      //console.log(data);
-      const result = data.map((element) => element.name);
-      //console.log(result);
-      return result;
-    });
-  return result;
-}
-
-function fullTeam() {
-  const url =
-    'https://api.github.com/repos/software-developer-org/blog/contents/about';
-  const result = fetch(url)
-    .then((response) => {
-      const data = response.json();
-      return data;
-    })
-    .then((data) => {
-      console.log(data);
-      const result = data.map((element) => element.name);
-      console.log(result);
-      return result;
-    });
-  return result;
-}
+const getBooks = require('./contract');
+const fullTeam = require('./contract');
 
 // create mock for fetch()
 fetch = jest.fn(() => {

@@ -1,20 +1,5 @@
 // import neccessary functions
-function getBlogs() {
-  const url =
-    'https://api.github.com/repos/software-developer-org/blog/contents/blogs';
-  const result = fetch(url)
-    .then((response) => {
-      const data = response.json();
-      return data;
-    })
-    .then((data) => {
-      //console.log(data);
-      const result = data.map((element) => element.name);
-      //console.log(result);
-      return result;
-    });
-  return result;
-}
+const getBlogs = require('./contract');
 
 function getBooks() {
   const url =

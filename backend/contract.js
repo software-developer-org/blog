@@ -46,6 +46,7 @@ function getBlogs() {
     });
   return result;
 }
+module.exports = getBlogs;
 
 // get a specific blog with the date, author, title and tdr
 function showBlog() {

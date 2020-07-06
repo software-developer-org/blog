@@ -4,14 +4,13 @@ describe('Testing bookmark overview contract', () => {
   const page = new PageObject();
 
   beforeEach('direct to our local server', () => {
-    page.navigate();
+    cy.visit('http://localhost:3000/bookmark.html');
   });
 
   it('check for overview content', () => {
-    page.checkBookmarkOverview(2);
-
-    page.checkBookmarkOverview(3);
-
-    page.checkBookmarkOverview(4);
+    const bookmarkElement = page.getBookmarkOverview();
+    bookmarkElement.forEach((element) => {
+      expect(element).to.be.ok;
+    });
   });
 });

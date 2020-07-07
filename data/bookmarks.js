@@ -28,8 +28,9 @@ function bookTitles() {
     });
   });
 }
+//module.exports = bookTitles;
 
-function showBookContent(id) {
+function showBookContent() {
   // Get the bookmarkElement with the ID we created in contract.js
   const bookmarkElement = document.getElementById('bookmarkSummary');
 
@@ -63,6 +64,7 @@ function showBookContent(id) {
     console.log(bookmarkElement);
   });
 }
+//module.exports = showBookContent;
 
 function showFullBook(id) {
   window.open('http://www.w3.org/DOM/');

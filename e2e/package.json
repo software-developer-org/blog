@@ -4,7 +4,8 @@
   "description": "e2e tests",
   "main": "app.js",
   "scripts": {
-    "e2e": "cypress open"
+    "e2e": "cypress open",
+    "e2e-h": "cypress run --headless"
   },
   "author": "Software-developer.org",
   "license": "ISC",

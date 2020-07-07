@@ -4,14 +4,14 @@ describe('Testing about overview contract', () => {
   const page = new PageObject();
 
   beforeEach('direct to our local server', () => {
-    page.navigate();
+    cy.visit('http://localhost:3000/about.html');
   });
-
+  // Testing if the page About in overview split is ok
   it('check for overview content', () => {
-    page.checkAboutOverview(2);
-
-    page.checkAboutOverview(3);
-
-    page.checkAboutOverview(4);
+    const aboutElement = page.getAboutOverview();
+    // Iterate through the About overview titles and content to test them
+    aboutElement.forEach((element) => {
+      expect(element).to.be.ok;
+    });
   });
 });

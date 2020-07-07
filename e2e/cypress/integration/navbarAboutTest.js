@@ -5,7 +5,7 @@ describe('Testing about navbar contract', () => {
   beforeEach('direct to our local server', () => {
     cy.visit('http://localhost:3000/about.html');
   });
-
+  // Testing if the page About in navbar split is ok
   it('check for navbar content', () => {
     const aboutElement = page.getNavbarAbout();
     aboutElement.forEach((element) => {

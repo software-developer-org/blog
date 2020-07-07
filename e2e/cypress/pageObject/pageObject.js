@@ -1,18 +1,23 @@
 export class PageObject {
-  checkHeaderButtons(buttonID) {
-    // Click on the button
-    cy.get(`#btn${buttonID} > a`).click();
-    cy.location().should((loc) => {
-      expect(loc.pathname).to.eq(`/${buttonID.toLowerCase()}.html`);
-    });
+  // Getting navigation buttons of header page (Blog, Bookmark and About button)
+  getNavigationButtons() {
+    // declare an empty array
+    const result = [];
+    // fill that array with the button
+    let blogButton = cy.get('#btnBlog > a');
+    result.push(blogButton);
+    let aboutButton = cy.get('#btnAbout > a');
+    result.push(aboutButton);
+    let bookmarkButton = cy.get('#btnBookmark > a');
+    result.push(bookmarkButton);
+    // return array of buttons
+    return result;
   }
 
-  checkBackButton() {
-    cy.get('#btnAbout >a').click();
-    cy.get('#btnBack > a').click();
-    cy.location().should((loc) => {
-      expect(loc.href).to.eq('http://localhost:3000/');
-    });
+  // Getting back button
+  getBackButton() {
+    // Get the back button
+    return cy.get('#btnBack > a');
   }
 
   // Getting navbar blog titles
@@ -33,6 +38,7 @@ export class PageObject {
     return cy.get(`:nth-child(${id}) > h4`);
   }
 
+  // Get navbar bookmark titles
   getNavbarBookmark() {
     let start = 2;
     const end = 4;
@@ -46,6 +52,7 @@ export class PageObject {
     return result;
   }
 
+  // Getting navbar team member names (titles)
   getNavbarAbout() {
     let start = 2;
     const end = 4;
@@ -58,6 +65,7 @@ export class PageObject {
     return result;
   }
 
+  // Getting overview blogs to view the titles and a short content
   getBlogOverview() {
     let start = 2;
     const end = 4;
@@ -72,6 +80,7 @@ export class PageObject {
     return result;
   }
 
+  // Getting the overview bookmarks to view the titles and a short content
   getBookmarkOverview() {
     let start = 2;
     const end = 4;
@@ -87,10 +96,19 @@ export class PageObject {
     return result;
   }
 
-  checkAboutOverview(aboutOvNumber) {
-    // Click on the team member to get the bio
-    cy.get(`:nth-child(${aboutOvNumber}) > h4`).click();
-    // Click on the biography of the team member to see if it is empty or not
-    cy.get('#about > p').should('not.be.empty');
+  getAboutOverview() {
+    let start = 2;
+    const end = 4;
+    const result = [];
+
+    while (start <= end) {
+      // Get the team member name(title)
+      const aboutElement = cy.get(`:nth-child(${start}) > h4`);
+      // Show the biography content of the team member
+      cy.get('#about > p');
+      result.push(aboutElement);
+      start++;
+    }
+    return result;
   }
 }

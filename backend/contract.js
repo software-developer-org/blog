@@ -39,7 +39,7 @@ function getBlogs() {
     .then((data) => {
       //console.log(data);
       const result = data.map((element) => element.name);
-      //console.log(result);
+      console.log(result);
       return result;
     });
   return result;

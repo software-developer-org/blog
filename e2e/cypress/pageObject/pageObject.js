@@ -1,8 +1,4 @@
 export class PageObject {
-  navigate() {
-    cy.visit('http://localhost:3000');
-  }
-
   checkHeaderButtons(buttonID) {
     // Click on the button
     cy.get(`#btn${buttonID} > a`).click();
@@ -19,50 +15,82 @@ export class PageObject {
     });
   }
 
-  checkNavbarBlogs(blogNubmer) {
-    // Click on the Blog button
-    cy.get('#btnBlog').click();
-    // Click on the 1st Blog to see if it is empty or not
-    cy.get(`:nth-child(${blogNubmer}) > h4`).click().should('not.be.empty');
+  // Getting navbar blog titles
+  getNavbarBlogs() {
+    let start = 2;
+    const end = 4;
+    const result = [];
+    while (start <= end) {
+      // Get the blog title and saved it in the constate element
+      const element = cy.get(`:nth-child(${start}) > h4`);
+      result.push(element);
+      start++;
+    }
+    return result;
   }
 
-  checkNavbarBookmark(bookmarkNumber) {
-    // Click on the Bookmark button
-    cy.get('#btnBookmark').click();
-    // Click on the 1st bookmark to test if it is empty or not
-    cy.get(`:nth-child(${bookmarkNumber}) > h4`).click().should('not.be.empty');
+  getNavbarBlog(id) {
+    return cy.get(`:nth-child(${id}) > h4`);
   }
 
-  checkNavbarAbout(aboutNumber) {
-    // Click on the About button
-    cy.get('#btnAbout').click();
-    // Click on the 1st team member
-    cy.get(`:nth-child(${aboutNumber}) > h4`).click();
-    // See if this element is empty
-    cy.get(`:nth-child(${aboutNumber}) > h4`).should('not.be.empty');
+  getNavbarBookmark() {
+    let start = 2;
+    const end = 4;
+    const result = [];
+    while (start <= end) {
+      // Get the bookmark title and saved it in the constate element
+      const element = cy.get(`:nth-child(${start}) > h4`);
+      result.push(element);
+      start++;
+    }
+    return result;
   }
 
-  checkBlogOverview(blogOvNumber) {
-    cy.get(`:nth-child(${blogOvNumber}) > #Blog`).click();
-    // Get the content of the 1st Blog
-    cy.get(`:nth-child(${blogOvNumber}) > #Content`).should('not.be.empty');
+  getNavbarAbout() {
+    let start = 2;
+    const end = 4;
+    const result = [];
+    while (start <= end) {
+      const element = cy.get(`:nth-child(${start}) > h4`);
+      result.push(element);
+      start++;
+    }
+    return result;
   }
 
-  checkBookmarkOverview(bookmarOvNumber) {
-    // Click on Bookmark button
-    cy.get('#btnBookmark > a').click();
-    // Click on the overview Bookmark title to get the Bookmark
-    cy.get(`:nth-child(${bookmarOvNumber}) > #Bookmark`).click();
-    // Get the content of the 1st Bookmark
-    cy.get(`:nth-child(${bookmarOvNumber}) > #Content`).should('not.be.empty');
+  getBlogOverview() {
+    let start = 2;
+    const end = 4;
+    const result = [];
+
+    while (start <= end) {
+      const blogElement = cy.get(`:nth-child(${start}) > #Blog`);
+      cy.get(`:nth-child(${start}) > #Content`);
+      result.push(blogElement);
+      start++;
+    }
+    return result;
+  }
+
+  getBookmarkOverview() {
+    let start = 2;
+    const end = 4;
+    const result = [];
+
+    while (start <= end) {
+      const bookmarkElement = cy.get(`:nth-child(${start}) > #Bookmark`);
+      // Get the content of the Bookmarks
+      cy.get(`:nth-child(${start}) > #Content`);
+      result.push(bookmarkElement);
+      start++;
+    }
+    return result;
   }
 
   checkAboutOverview(aboutOvNumber) {
-    // Click on Abaout button
-    cy.get('#btnAbout > a').click();
-    // Click on the 1st team member to get the bio
+    // Click on the team member to get the bio
     cy.get(`:nth-child(${aboutOvNumber}) > h4`).click();
-    // Click on the biography of the 1st team member to see if it is empty or not
+    // Click on the biography of the team member to see if it is empty or not
     cy.get('#about > p').should('not.be.empty');
   }
 }

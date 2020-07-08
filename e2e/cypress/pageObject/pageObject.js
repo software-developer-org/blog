@@ -3,12 +3,13 @@ export class PageObject {
   getNavigationButtons() {
     // declare and initialize the button array
     const buttons = ['Blog', 'Bookmark', 'About'];
-
+    const result = [];
     // iterate through the array to get all buttons
     for (var i = 0; i < buttons.length; i++) {
-      cy.get(`#btn${buttons[i]} > a`);
+      let naviButtons = cy.get(`#btn${buttons[i]} > a`);
+      result.push(naviButtons);
     }
-    return buttons;
+    return result;
   }
 
   // Getting back button

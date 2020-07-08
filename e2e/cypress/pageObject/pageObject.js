@@ -1,17 +1,14 @@
 export class PageObject {
   // Getting navigation buttons of header page (Blog, Bookmark and About button)
   getNavigationButtons() {
-    // declare an empty array
-    const result = [];
-    // fill that array with the button
-    let blogButton = cy.get('#btnBlog > a');
-    result.push(blogButton);
-    let aboutButton = cy.get('#btnAbout > a');
-    result.push(aboutButton);
-    let bookmarkButton = cy.get('#btnBookmark > a');
-    result.push(bookmarkButton);
-    // return array of buttons
-    return result;
+    // declare and initialize the button array
+    const buttons = ['Blog', 'Bookmark', 'About'];
+
+    // iterate through the array to get all buttons
+    for (var i = 0; i < buttons.length; i++) {
+      cy.get(`#btn${buttons[i]} > a`);
+    }
+    return buttons;
   }
 
   // Getting back button

@@ -1,27 +1,27 @@
-{ "name": "app",
-    "version": "1.0.0",
-    "description": "blog app projekt",
-    "main": "app.js",
-    "scripts": {
-        "start": "node ./bin/www",
-      "start-dev": "nodemon ./bin/www",
-      "lint": "eslint . --ext .js",
-      "format": "eslint . --fix",
-      "e2e": "cypress open --config fileServerFolder=tests/e2e/cypress",
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "blog app projekt",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "start-dev": "nodemon ./bin/www",
+    "lint": "eslint . --ext .js",
+    "format": "eslint . --fix",
+    "e2e": "cypress open --config fileServerFolder=tests/e2e/cypress",
     "e2e-h": "cypress run --headless --config fileServerFolder=tests/e2e/cypress",
     "test": "jest"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/software-developer-org/blog.git"
-    },
-    "author": "software-developer.org",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/software-developer-org/blog/issues"
-    },
-    "homepage": "https://github.com/software-developer-org/blog#readme",
-
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/software-developer-org/blog.git"
+  },
+  "author": "software-developer.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/software-developer-org/blog/issues"
+  },
+  "homepage": "https://github.com/software-developer-org/blog#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -30,7 +30,6 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
   },
-  
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
@@ -40,17 +39,17 @@
     "nodemon": "^2.0.4",
     "cypress": "^4.8.0",
     "jest": "^26.0.1",
-  "@typescript-eslint/eslint-plugin": "^3.4.0",
-  "@typescript-eslint/parser": "^3.4.0",
-  "babel-eslint": "^10.1.0",
-  "eslint": "^7.3.1",
-  "eslint-config-prettier": "^6.11.0",
-  "eslint-config-standard": "^14.1.1",
-  "eslint-plugin-import": "^2.21.2",
-  "eslint-plugin-node": "^11.1.0",
-  "eslint-plugin-prettier": "^3.1.4",
-  "eslint-plugin-promise": "^4.2.1",
-  "eslint-plugin-standard": "^4.0.1",
-  "prettier": "^2.0.5"
-}
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.0.5"
+  }
 }

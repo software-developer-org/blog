@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="bookmarks.js">
+    </script>
+    <script type="text/javascript" src="contract.js">
+    </script>
+
+    <title>Bookmark Page Setup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">Software-Developer/Bookmark-Header
+        <button id="btnLogin">Login</button>
+        <button id="btnBack"><a href="#" onclick="history.go(-1);return false">Back</a></button>
+        <button id="btnBlog"><a href="blog.html">Blog</a></button>
+        <button id="btnBookmark"><a href="bookmark.html">Bookmark</a></button>
+        <button id="btnAbout"><a href="about.html">About</a></button>
+    </div>
+
+    <div id="bookmarkSummary" class="overview">
+
+        <button id='add'>add</button>
+    </div>
+
+    <!-- Bookmark titles in navbar -->
+    <div id="navBarBookTitles" class="navbar">
+        <h2>Bookmark Titles</h2>
+    </div>
+
+    <script>
+        bookTitles();
+    </script>
+    <script>showBookContent();
+    </script>
+</body>
+
+</html>

@@ -1,8 +1,160 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* Make the page in two columns */
+* {
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+/* Header/Blog Title */
+.header {
+  height: 25vh;
+  border-style: solid;
+  border-width: 1px;
+  padding: 60px;
+  font-size: 30px;
+  text-align: center;
+}
+#btnLogin {
+  display: inline-block;
+  border-radius: 5px;
+  position: absolute;
+  top: 1vmax;
+  right: 1%;
+  padding: 10px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#btnBack {
+  display: inline-block;
+  border-radius: 5px;
+  position: absolute;
+  top: 130px;
+  right: 1%;
+  padding: 10px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#btnBlog {
+  display: inline-block;
+  border-radius: 5px;
+  position: absolute;
+  top: 10.5vmax;
+  left: 1%;
+  padding: 10px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#btnBookmark {
+  display: inline-block;
+  border-radius: 5px;
+  position: absolute;
+  top: 10.5vmax;
+  left: 6%;
+  padding: 10px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#btnAbout {
+  display: inline-block;
+  border-radius: 5px;
+  position: absolute;
+  top: 10.5vmax;
+  left: 14.8%;
+  padding: 10px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.navbar {
+  float: left;
+  width: 30%;
+  height: 75vh;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+/* Right column */
+.overview {
+  float: right;
+  width: 70%;
+  height: 75vh;
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+/* about overview versions */ 
+#about{
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 75 vh;
+}
+
+#team{
+  opacity: 0;
+  z-index: 2;
+  position: alsolute;
+  width: 100%;
+  height: 75 vh;
+}
+
+/* add button settings */
+#add{
+  position: absolute;
+  right: 2%;
+  margin-top: 2%;
+}
+
+/* blog overview versions */
+#blogSummary{
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 75 vh;
+}
+
+#blogOverview{
+  border-style: solid;
+  border-width: 1px;
+}
+#Blog{
+  font-weight: bold;
+  font-size: 20px;
+}
+#Author{
+  float: right;
+  margin-right: 10%;
+}
+#Date{
+  float: right;
+}
+#Content{
+  margin-top: 3%;
+}
+
+#bookOverview{
+  border-style: solid;
+  border-width: 1px;
+}
+#Bookmark{
+  font-weight: bold;
+  font-size: 20px;
+}
+#Content{
+  margin-top: 3%;
+}
+
+
+#fullpage{
+  opacity: 0;
+  z-index: 2;
+  position: alsolute;
+  width: 100%;
+  height: 75 vh;
 }

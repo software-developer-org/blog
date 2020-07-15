@@ -4,13 +4,18 @@
     "parser": "babel-eslint",
     
         "extends": [
-          "plugin:prettier/recommended"
+          "plugin:prettier/recommended",
+          "eslint-config-prettier"
         ],
       
         "plugins": ["prettier"],
       
-    "rules": {
-        "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
+    "rules": { 
+        "prettier/prettier": 
+        ["error", {
+            "singleQuote": true, "parser": "flow",
+                "endOfLine":"auto"
+        }],
         "quotes": [2, "single", "avoid-escape"],
         "semi": ["error", "always"],
         "constructor-super": 2,

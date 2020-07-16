@@ -44,7 +44,6 @@ function getBlogs() {
     });
   return result;
 }
-//module.exports = getBlogs;
 
 // get a specific blog with the date, author, title and tdr
 function showBlog() {
@@ -86,7 +85,6 @@ function getBooks() {
     });
   return result;
 }
-//module.exports = getBooks;
 
 // get a specific bookmark with title and summary
 function showBook() {
@@ -127,7 +125,6 @@ function fullTeam() {
     });
   return result;
 }
-//module.exports = fullTeam;
 
 // ------ADD FUNCTION------
 
@@ -136,3 +133,5 @@ function addBlog(BlogData) {}
 
 // add blog with the date, author, title, tdr and content
 function addBook(BookData) {}
+
+export { getBlogs, getBooks, fullTeam, showBlog, showBook };

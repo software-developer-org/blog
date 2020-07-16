@@ -1,3 +1,5 @@
+import { fullTeam } from '../javascripts/contract.js';
+
 // Adding dummy datas to the Bookmark's navbar
 function aboutTeamMemberName() {
   // Create an ordered list (ol) element
@@ -33,3 +35,7 @@ function aboutTeamMemberName() {
 function showAboutTMContent(id) {
   console.log('>>>>> ToDo', id);
 }
+
+window.addEventListener('load', aboutTeamMemberName);
+
+export { aboutTeamMemberName };

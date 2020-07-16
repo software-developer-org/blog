@@ -1,7 +1,7 @@
 // import neccessary functions
-const getBlogs = require('./contract');
-const getBooks = require('./contract');
-const fullTeam = require('./contract');
+import getBlogs from '../../public/javascripts/contract';
+import getBooks from '../../public/javascripts/contract';
+import fullTeam from '../../public/javascripts/contract';
 
 // create mock for fetch()
 fetch = jest.fn(() => {

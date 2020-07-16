@@ -1,3 +1,5 @@
+import { getBooks, showBook } from '../javascripts/contract.js';
+
 // Adding dummy datas to the Bookmark's navbar
 function bookTitles() {
   // Create an ordered list (ol) element
@@ -28,7 +30,6 @@ function bookTitles() {
     });
   });
 }
-//module.exports = bookTitles;
 
 function showBookContent() {
   // Get the bookmarkElement with the ID we created in contract.js
@@ -64,9 +65,13 @@ function showBookContent() {
     console.log(bookmarkElement);
   });
 }
-//module.exports = showBookContent;
 
 function showFullBook(id) {
   window.open('http://www.w3.org/DOM/');
   console.log('>>>>>TODO showFullBlog ' + id);
 }
+
+window.addEventListener('load', bookTitles);
+window.addEventListener('load', showBookContent);
+
+export { bookTitles, showBookContent };

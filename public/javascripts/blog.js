@@ -1,3 +1,5 @@
+import { getBlogs, showBlog } from '../javascripts/contract.js';
+
 // Adding dummy datas to the Blog's navbar
 function blogTitles() {
   // Create an ordered list (ol) element
@@ -77,3 +79,7 @@ function showBlogContent() {
 function showFullBlog(id) {
   console.log('>>>>>TODO showFullBlog ' + id);
 }
+window.addEventListener('load', blogTitles);
+window.addEventListener('load', showBlogContent);
+
+export { blogTitles, showBlogContent };

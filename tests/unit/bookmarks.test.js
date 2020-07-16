@@ -1,7 +1,7 @@
 // import the neccessary functions
 
-const bookTitles = require('../data/bookmarks');
-const showBookContent = require('../data/bookmarks');
+import bookTitles from '../../public/javascripts/bookmark';
+import showBookContent from '../../public/javascripts/bookmark';
 
 // create mock function for bookTitles()
 getBooks = jest.fn(() => {

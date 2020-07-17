@@ -1,8 +1,7 @@
-const { TestScheduler } = require('jest');
-
 // import the neccessary functions
-import blogTitles from '../../public/javascripts/blog';
-import showBlogContent from '../../public/javascripts/blog';
+require('jest-fetch-mock').enableMocks();
+import { blogTitles } from '../../public/javascripts/blog';
+import { showBlogContent } from '../../public/javascripts/blog';
 // create mock for blogTitles()
 getBlogs = jest.fn(() => {
   class ResponseData {

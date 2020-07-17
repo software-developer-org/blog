@@ -1,7 +1,7 @@
 // import the neccessary functions
-
-import bookTitles from '../../public/javascripts/bookmark';
-import showBookContent from '../../public/javascripts/bookmark';
+require('jest-fetch-mock').enableMocks();
+import { bookTitles } from '../../public/javascripts/bookmark';
+import { showBookContent } from '../../public/javascripts/bookmark';
 
 // create mock function for bookTitles()
 getBooks = jest.fn(() => {

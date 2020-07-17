@@ -1,7 +1,8 @@
 // import neccessary functions
-import getBlogs from '../../public/javascripts/contract';
-import getBooks from '../../public/javascripts/contract';
-import fullTeam from '../../public/javascripts/contract';
+require('jest-fetch-mock').enableMocks();
+import { getBlogs } from '../../public/javascripts/contract';
+import { getBooks } from '../../public/javascripts/contract';
+import { fullTeam } from '../../public/javascripts/contract';
 
 // create mock for fetch()
 fetch = jest.fn(() => {

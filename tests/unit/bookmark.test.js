@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 // import the neccessary functions
 require('jest-fetch-mock').enableMocks();
 import { bookTitles } from '../../public/javascripts/bookmark';

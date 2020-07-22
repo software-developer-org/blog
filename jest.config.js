@@ -2,6 +2,7 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/tests/unit/setup-jest.js'],
   transform: {
     '^.+\\.js?$': 'babel-jest',
   },

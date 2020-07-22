@@ -20,7 +20,7 @@
             "request": "launch",
             "runtimeArgs": [
               "--inspect-brk",
-              "${workspaceRoot}/backend/node_modules/jest/bin/jest.js",
+              "${workspaceRoot}/node_modules/jest/bin/jest.js",
               //"contract", // uncomment in case only one test should be started
               "--runInBand"
             ],

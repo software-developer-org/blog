@@ -34,7 +34,7 @@ function bookTitles() {
 function showBookContent() {
   // Get the bookmarkElement with the ID we created in contract.js
   const bookmarkElement = document.getElementById('bookmarkSummary');
-
+  console.log(bookmarkElement);
   // Append it to the overview block
   showBook().forEach((book) => {
     // Create a divs for blog overview

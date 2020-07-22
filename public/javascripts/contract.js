@@ -1,5 +1,3 @@
-//const { response } = require("express");
-
 // blog dummy
 class BlogData {
   title;

@@ -17,7 +17,8 @@ describe('unit test bookmark', () => {
 
   // test showBlogContent()
   test('showBlogContent() processed array data', () => {
-    const spy = jest.spyOn(Contract, 'getBlog');
+    const spy = jest.spyOn(Contract, 'showBlog');
+    spy.mockImplementation(() => []);
     showBlogContent();
     expect(spy).toHaveBeenCalled();
   });

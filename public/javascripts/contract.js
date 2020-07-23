@@ -1,26 +1,9 @@
-// blog dummy
-class BlogData {
-  title;
-  id;
-  date;
-  author;
-  tldr;
-  content;
-}
-
 // bookmark dummy
 class BookData {
   title;
   id;
   tldr;
   url;
-}
-
-// about dummy
-class TeamData {
-  name;
-  bio;
-  // more??
 }
 
 // -----BLOGS-----
@@ -35,9 +18,7 @@ function getBlogs() {
       return data;
     })
     .then((data) => {
-      //console.log(data);
       const result = data.map((element) => element.name);
-      console.log(result);
       return result;
     });
   return result;
@@ -45,18 +26,39 @@ function getBlogs() {
 
 // get a specific blog with the date, author, title and tdr
 function showBlog() {
-  const showBlogResult = [];
+  /*  array[i].download_url = api
+      object.title = title
+      object.author = ...
+      object.date = ...
+      object.tldr = ...
 
-  for (var i = 0; i < 3; i++) {
-    const blogData = new BlogData();
-    blogData.id = '00 ' + i;
-    blogData.title = 'Blog ' + i;
-    blogData.author = 'Author ' + i;
-    blogData.date = 'Date ' + i;
-    blogData.content = 'This is a short content of Blog ' + i;
-    showBlogResult.push(blogData);
+      fetch blogs content,
+      take first 3 and fetch the objekt,
+      return the resulting array 
+  */
+  const blogdata = [];
+
+  for (let i = 0; i <= 2; i++) {
+    const url =
+      'https://api.github.com/repos/software-developer-org/blog/contents/blogs';
+    fetch(url)
+      .then((response) => {
+        const data = response.json();
+        return data;
+      })
+      .then((data) => {
+        fetch(data[i].download_url)
+          .then((response) => {
+            const blogInfo = response.json();
+            return blogInfo;
+          })
+          .then((blogarray) => {
+            blogdata.push(blogarray);
+            return blogdata;
+          });
+      });
   }
-  return showBlogResult;
+  return blogdata;
 }
 
 // get a specific blog with title and full content
@@ -88,14 +90,27 @@ function getBooks() {
 function showBook() {
   const showBookResult = [];
 
-  for (var i = 0; i < 3; i++) {
-    const bookData = new BookData();
-    bookData.id = '00 ' + i;
-    bookData.title = 'Bookmark ' + i;
-    bookData.url = ' ' + i;
-    bookData.content = 'Hier is some brief content to read...' + i;
-    showBookResult.push(bookData);
+  for (let i = 0; i <= 2; i++) {
+    const url =
+      'https://api.github.com/repos/software-developer-org/blog/contents/bookmarks';
+    fetch(url)
+      .then((response) => {
+        const data = response.json();
+        return data;
+      })
+      .then((data) => {
+        fetch(data[i].download_url)
+          .then((response) => {
+            const bookInfo = response.json();
+            return bookInfo;
+          })
+          .then((bookarray) => {
+            showBookResult.push(bookarray);
+            return showBookResult;
+          });
+      });
   }
+  console.log(showBookResult);
   return showBookResult;
 }
 

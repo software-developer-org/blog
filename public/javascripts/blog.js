@@ -37,8 +37,13 @@ function showBlogContent() {
   const overviewElement = document.getElementById('blogSummary');
 
   // Append it to the overview block
-  showBlog().forEach((blog) => {
-    // Create a divs for blog overview
+  const element = showBlog();
+  console.log(element);
+  console.log(element.length);
+  for (let i = 0; i <= element.length; i++) {
+    console.log('why?');
+    console.log(element.length);
+    // Create a div for blog overview
     const blogOverview = document.createElement('div');
     blogOverview.setAttribute('id', 'blogOverview');
 
@@ -57,23 +62,22 @@ function showBlogContent() {
     blogOverview.appendChild(blogDateDiv);
     blogOverview.appendChild(blogContentDiv);
 
-    const blogTitle = document.createTextNode(blog.title);
+    const blogTitle = document.createTextNode(element[i].title);
     blogTitleDiv.appendChild(blogTitle);
-    const blogAutor = document.createTextNode(blog.author);
+    const blogAutor = document.createTextNode(element[i].author);
     blogAuthorDiv.appendChild(blogAutor);
-    const blogDate = document.createTextNode(blog.date);
+    const blogDate = document.createTextNode(element[i].date);
     blogDateDiv.appendChild(blogDate);
-    const blogContent = document.createTextNode(blog.content);
+    const blogContent = document.createTextNode(element[i].tldr);
     blogContentDiv.appendChild(blogContent);
-
-    blogOverview.onclick = (event) => {
-      showFullBlog(blog.title);
-    };
 
     overviewElement.appendChild(blogOverview);
 
-    console.log(overviewElement);
-  });
+    blogOverview.onclick = () => {
+      showFullBlog(blog.title);
+    };
+  }
+  console.log('end works');
 }
 
 function showFullBlog(id) {

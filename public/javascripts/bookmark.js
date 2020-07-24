@@ -34,35 +34,38 @@ function bookTitles() {
 function showBookContent() {
   // Get the bookmarkElement with the ID we created in contract.js
   const bookmarkElement = document.getElementById('bookmarkSummary');
-  console.log(bookmarkElement);
+
   // Append it to the overview block
-  showBook().forEach((book) => {
-    // Create a divs for blog overview
-    const bookOverview = document.createElement('div');
-    bookOverview.setAttribute('id', 'bookOverview');
 
-    const bookTitleDiv = document.createElement('div');
-    bookTitleDiv.href = 'http://www.w3.org/DOM/';
-    bookTitleDiv.setAttribute('id', 'Bookmark');
-    const bookContentDiv = document.createElement('div');
-    bookContentDiv.setAttribute('id', 'Content');
+  showBook().forEach((bookdata) => {
+    bookdata.then((book) => {
+      // Create a divs for blog overview
+      const bookOverview = document.createElement('div');
+      bookOverview.setAttribute('id', 'bookOverview');
 
-    // create child divs in overview div
-    bookOverview.appendChild(bookTitleDiv);
-    bookOverview.appendChild(bookContentDiv);
+      const bookTitleDiv = document.createElement('div');
+      bookTitleDiv.href = 'http://www.w3.org/DOM/';
+      bookTitleDiv.setAttribute('id', 'Bookmark');
+      const bookContentDiv = document.createElement('div');
+      bookContentDiv.setAttribute('id', 'Content');
 
-    const bookTitle = document.createTextNode(book.title);
-    bookTitleDiv.appendChild(bookTitle);
-    const bookContent = document.createTextNode(book.content);
-    bookContentDiv.appendChild(bookContent);
+      // create child divs in overview div
+      bookOverview.appendChild(bookTitleDiv);
+      bookOverview.appendChild(bookContentDiv);
 
-    bookOverview.onclick = (event) => {
-      showFullBook(book.url);
-    };
+      const bookTitle = document.createTextNode(book.title);
+      bookTitleDiv.appendChild(bookTitle);
+      const bookContent = document.createTextNode(book.tldr);
+      bookContentDiv.appendChild(bookContent);
 
-    bookmarkElement.appendChild(bookOverview);
+      bookOverview.onclick = (event) => {
+        showFullBook(book.url);
+      };
 
-    console.log(bookmarkElement);
+      bookmarkElement.appendChild(bookOverview);
+
+      console.log(bookmarkElement);
+    });
   });
 }
 

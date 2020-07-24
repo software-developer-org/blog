@@ -21,6 +21,7 @@ function getBlogs() {
       const result = data.map((element) => element.name);
       return result;
     });
+  console.log(result);
   return result;
 }
 
@@ -36,29 +37,28 @@ function showBlog() {
       take first 3 and fetch the objekt,
       return the resulting array 
   */
-  const blogdata = [];
+  const blogarray = [];
 
   for (let i = 0; i <= 2; i++) {
     const url =
       'https://api.github.com/repos/software-developer-org/blog/contents/blogs';
-    fetch(url)
+    const blogdata = fetch(url)
       .then((response) => {
         const data = response.json();
         return data;
       })
       .then((data) => {
-        fetch(data[i].download_url)
-          .then((response) => {
-            const blogInfo = response.json();
-            return blogInfo;
-          })
-          .then((blogarray) => {
-            blogdata.push(blogarray);
-            return blogdata;
-          });
+        let response = fetch(data[i].download_url);
+        return response;
+      })
+      .then((response) => {
+        const blogInfo = response.json();
+        return blogInfo;
       });
+    blogarray.push(blogdata);
   }
-  return blogdata;
+  console.log(blogarray);
+  return blogarray;
 }
 
 // get a specific blog with title and full content
@@ -72,6 +72,7 @@ function fullBlog(id) {
 function getBooks() {
   const url =
     'https://api.github.com/repos/software-developer-org/blog/contents/bookmarks';
+  // const fo =  fetch is important because this variable is returned at the end
   const result = fetch(url)
     .then((response) => {
       const data = response.json();
@@ -93,24 +94,21 @@ function showBook() {
   for (let i = 0; i <= 2; i++) {
     const url =
       'https://api.github.com/repos/software-developer-org/blog/contents/bookmarks';
-    fetch(url)
+    const bookdata = fetch(url)
       .then((response) => {
         const data = response.json();
         return data;
       })
       .then((data) => {
-        fetch(data[i].download_url)
-          .then((response) => {
-            const bookInfo = response.json();
-            return bookInfo;
-          })
-          .then((bookarray) => {
-            showBookResult.push(bookarray);
-            return showBookResult;
-          });
+        let response = fetch(data[i].download_url);
+        return response;
+      })
+      .then((response) => {
+        const bookInfo = response.json();
+        return bookInfo;
       });
+    showBookResult.push(bookdata);
   }
-  console.log(showBookResult);
   return showBookResult;
 }
 

@@ -37,47 +37,45 @@ function showBlogContent() {
   const overviewElement = document.getElementById('blogSummary');
 
   // Append it to the overview block
-  const element = showBlog();
-  console.log(element);
-  console.log(element.length);
-  for (let i = 0; i <= element.length; i++) {
-    console.log('why?');
-    console.log(element.length);
-    // Create a div for blog overview
-    const blogOverview = document.createElement('div');
-    blogOverview.setAttribute('id', 'blogOverview');
 
-    const blogTitleDiv = document.createElement('div');
-    blogTitleDiv.setAttribute('id', 'Blog');
-    const blogAuthorDiv = document.createElement('div');
-    blogAuthorDiv.setAttribute('id', 'Author');
-    const blogDateDiv = document.createElement('div');
-    blogDateDiv.setAttribute('id', 'Date');
-    const blogContentDiv = document.createElement('div');
-    blogContentDiv.setAttribute('id', 'Content');
+  showBlog().forEach((blog) => {
+    console.log(blog);
+    blog.then((blogdata) => {
+      // Create a div for blog overview
+      const blogOverview = document.createElement('div');
+      blogOverview.setAttribute('id', 'blogOverview');
 
-    // create child divs in overview div
-    blogOverview.appendChild(blogTitleDiv);
-    blogOverview.appendChild(blogAuthorDiv);
-    blogOverview.appendChild(blogDateDiv);
-    blogOverview.appendChild(blogContentDiv);
+      const blogTitleDiv = document.createElement('div');
+      blogTitleDiv.setAttribute('id', 'Blog');
+      const blogAuthorDiv = document.createElement('div');
+      blogAuthorDiv.setAttribute('id', 'Author');
+      const blogDateDiv = document.createElement('div');
+      blogDateDiv.setAttribute('id', 'Date');
+      const blogContentDiv = document.createElement('div');
+      blogContentDiv.setAttribute('id', 'Content');
 
-    const blogTitle = document.createTextNode(element[i].title);
-    blogTitleDiv.appendChild(blogTitle);
-    const blogAutor = document.createTextNode(element[i].author);
-    blogAuthorDiv.appendChild(blogAutor);
-    const blogDate = document.createTextNode(element[i].date);
-    blogDateDiv.appendChild(blogDate);
-    const blogContent = document.createTextNode(element[i].tldr);
-    blogContentDiv.appendChild(blogContent);
+      // create child divs in overview div
+      blogOverview.appendChild(blogTitleDiv);
+      blogOverview.appendChild(blogAuthorDiv);
+      blogOverview.appendChild(blogDateDiv);
+      blogOverview.appendChild(blogContentDiv);
 
-    overviewElement.appendChild(blogOverview);
+      const blogTitle = document.createTextNode(blogdata.title);
+      blogTitleDiv.appendChild(blogTitle);
+      const blogAutor = document.createTextNode(blogdata.author);
+      blogAuthorDiv.appendChild(blogAutor);
+      const blogDate = document.createTextNode(blogdata.date);
+      blogDateDiv.appendChild(blogDate);
+      const blogContent = document.createTextNode(blogdata.tldr);
+      blogContentDiv.appendChild(blogContent);
 
-    blogOverview.onclick = () => {
-      showFullBlog(blog.title);
-    };
-  }
-  console.log('end works');
+      overviewElement.appendChild(blogOverview);
+
+      blogOverview.onclick = () => {
+        showFullBlog(blogdata.title);
+      };
+    });
+  });
 }
 
 function showFullBlog(id) {

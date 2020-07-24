@@ -1,11 +1,3 @@
-// bookmark dummy
-class BookData {
-  title;
-  id;
-  tldr;
-  url;
-}
-
 // -----BLOGS-----
 
 // get all blogs with titles
@@ -57,7 +49,6 @@ function showBlog() {
       });
     blogarray.push(blogdata);
   }
-  console.log(blogarray);
   return blogarray;
 }
 
@@ -79,9 +70,7 @@ function getBooks() {
       return data;
     })
     .then((data) => {
-      //console.log(data);
       const result = data.map((element) => element.name);
-      //console.log(result);
       return result;
     });
   return result;
@@ -129,9 +118,7 @@ function fullTeam() {
       return data;
     })
     .then((data) => {
-      console.log(data);
       const result = data.map((element) => element.name);
-      console.log(result);
       return result;
     });
   return result;

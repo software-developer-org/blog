@@ -80,7 +80,35 @@ function showBlogContent() {
 
 function showFullBlog(id) {
   console.log('>>>>>TODO showFullBlog ' + id);
+  const url = `https://raw.githubusercontent.com/software-developer-org/blog/master/blogs/${id}`;
+
+  //get article of the blog
+  const blogArticle = fetch(url)
+    .then((response) => {
+      const article = response.json();
+      return article;
+    })
+    .then((response) => {
+      const text = response.content;
+      console.log(text);
+
+      //create div and write blog article
+      const page = document.getElementById('blogFullpage');
+      const overview = document.getElementById('blogSummary');
+
+      overview.style.display = 'none';
+
+      //--TODO: titel musst be h1 and some changes to the content for better readability--
+      const blogPage = document.createElement('div');
+      blogPage.setAttribute('id', 'blogPage');
+      const blogText = document.createTextNode(text);
+      const blogTitle = document.createTextNode(id);
+      blogPage.appendChild(blogTitle);
+      blogPage.appendChild(blogText);
+      page.appendChild(blogPage);
+    });
 }
+
 window.addEventListener('load', blogTitles);
 window.addEventListener('load', showBlogContent);
 

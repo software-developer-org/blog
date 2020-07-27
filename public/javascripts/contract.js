@@ -13,7 +13,6 @@ function getBlogs() {
       const result = data.map((element) => element.name);
       return result;
     });
-  console.log(result);
   return result;
 }
 
@@ -29,27 +28,33 @@ function showBlog() {
       take first 3 and fetch the objekt,
       return the resulting array 
   */
-  const blogarray = [];
 
-  for (let i = 0; i <= 2; i++) {
-    const url =
-      'https://api.github.com/repos/software-developer-org/blog/contents/blogs';
-    const blogdata = fetch(url)
-      .then((response) => {
-        const data = response.json();
-        return data;
-      })
-      .then((data) => {
-        let response = fetch(data[i].download_url);
+  //  fetch all blogs
+  const url =
+    'https://api.github.com/repos/software-developer-org/blog/contents/blogs';
+  const blogmetadata = fetch(url).then((response) => {
+    const data = response.json();
+    return data;
+  });
+
+  // fetch the first 3 blogs
+  const blogContentArray = blogmetadata.then((data) => {
+    const blogdata = data.slice(data.length - 3, data.length + 1);
+
+    // get content of the blogs
+    const blogarray = blogdata.map((metadata) => {
+      // fetch blog content
+      const blogInfo = fetch(metadata.download_url).then((response) => {
+        // get and return json from blog content
+        response = response.json();
         return response;
-      })
-      .then((response) => {
-        const blogInfo = response.json();
-        return blogInfo;
       });
-    blogarray.push(blogdata);
-  }
-  return blogarray;
+      return blogInfo;
+    });
+    return blogarray;
+  });
+  console.log(blogContentArray);
+  return blogContentArray;
 }
 
 // get a specific blog with title and full content

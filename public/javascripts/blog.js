@@ -74,7 +74,7 @@ function showBlogContent() {
         const blogContent = document.createTextNode(blogdata.tldr);
         blogContentDiv.appendChild(blogContent);
 
-        // overviewElement.appendChild(blogOverview);
+        overviewElement.appendChild(blogOverview);
 
         blogOverview.onclick = () => {
           showFullBlog(blogdata.title);
@@ -84,11 +84,17 @@ function showBlogContent() {
   });
 }
 // ---TODO-- id needs to be a parameter in full implementation
-function showFullBlog() {
-  // ---TODO-- redirect to article pag
-
+async function showFullBlog() {
+  // ---TODO--
+  // ---- try: sequencialy generate elements for the json data and arrays----
+  //redirect to article pag
+  // stringify json response
+  // create elements for the data
+  // write data into elements with paragraph logic
+  /*
+  --- OLD VERSION FOR REFERENCE---
   // fetch blog content into variable
-  fetchBlogContent().then((article) => {
+  const articelHtml = fetchBlogContent().then((article) => {
     const articleContent = document.createTextNode(article);
     console.log(articleContent);
     // create needed div and apply article content
@@ -97,43 +103,12 @@ function showFullBlog() {
     // append result into blog page
     const page = document.getElementById('blogSummary');
     page.appendChild(articleDiv);
+    return page;
   });
+  await window.sessionStorage.setItem('blog', articelHtml);
 
-  /*
-  const url = `https://raw.githubusercontent.com/software-developer-org/blog/master/blogs/${id}`;
-
-  //fetch blog content
-  fetch(url)
-    .then((response) => {
-      const article = response.json();
-      return article;
-    })
-    .then((response) => {
-      //create div and write blog article
-      const page = document.getElementById('blogFullpage');
-      const overview = document.getElementById('blogSummary');
-
-      overview.style.display = 'none';
-
-      //--TODO: some changes to the content for better readability--
-      const blogPage = document.createElement('div');
-      const blogText = document.createElement('div');
-      const blogTitle = document.createElement('h1');
-
-      blogPage.setAttribute('id', 'blogPage');
-
-      const blogTextNode = document.createTextNode(response.content);
-      blogText.appendChild(blogTextNode);
-
-      const blogTitleNode = document.createTextNode(response.title);
-      blogTitle.appendChild(blogTitleNode);
-
-      blogPage.appendChild(blogTitle);
-      blogPage.appendChild(blogText);
-      page.appendChild(blogPage);
-     
-    });
-    */
+  window.location.replace('/blogs');
+  */
 }
 
 window.addEventListener('load', blogTitles);

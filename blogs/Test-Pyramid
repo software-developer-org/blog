@@ -7,8 +7,8 @@
     "It layers the testing to smaler parts of your projekt to simplify the process an makes it overall faster."
     ],         
     "content": [
-    " The test layers look like this:",
-    " 1. At the bottom are Unit Tests",
+    "The test layers look like this:",
+    "1. At the bottom are Unit Tests",
     "These count for the majority of tests you have for your codebase. ",
     "This tests the smallest unit of code possible, only test a single method each.",
     "This builds the foundation for further testing.",
@@ -22,7 +22,7 @@
     "However, these are typically black-box tests that are mostly performed manually.",
     "Test coverage:",
     "You should Unit test all your functions and together with the Integration tests this makes 80% of your total test coverage.",
-    "The 20%	left is end to end testing that is still requiert to make shure your projekt works as intended."
+    "The 20% left is end to end testing that is still requiert to make shure your projekt works as intended."
     ],
     "links":[
     "References",

@@ -39,7 +39,7 @@ function showBlog() {
 
   // fetch the first 3 blogs
   const blogContentArray = blogmetadata.then((data) => {
-    const blogdata = data.slice(data.length - 3, data.length + 1);
+    const blogdata = data.slice(0, 3);
 
     // get content of the blogs
     const blogarray = blogdata.map((metadata) => {
@@ -53,13 +53,17 @@ function showBlog() {
     });
     return blogarray;
   });
-  console.log(blogContentArray);
   return blogContentArray;
 }
 
 // get a specific blog with title and full content
-function fullBlog(id) {
-  return;
+function fetchBlogContent() {
+  // ---TODO-- id needs to be a parameter in full implementation
+  const id = 'pyramid-test.html';
+  const url = `https://raw.githubusercontent.com/software-developer-org/blog/master/blogs/${id}`;
+
+  const blogArticle = fetch(url).then((response) => response.text());
+  return blogArticle;
 }
 
 // -----BOOKMARKS------
@@ -137,4 +141,4 @@ function addBlog(BlogData) {}
 // add blog with the date, author, title, tdr and content
 function addBook(BookData) {}
 
-export { getBlogs, getBooks, fullTeam, showBlog, showBook };
+export { getBlogs, getBooks, fullTeam, showBlog, showBook, fetchBlogContent };

@@ -1,6 +1,11 @@
-import { getBlogs, showBlog } from '../javascripts/contract.js';
+import {
+  getBlogs,
+  showBlog,
+  fetchBlogContent,
+} from '../javascripts/contract.js';
 
-// Adding dummy datas to the Blog's navbar
+// ---TODO--- rewrite navbar and overview code to get new data from blogs folder
+
 function blogTitles() {
   // Create an ordered list (ol) element
   var ol = document.createElement('ol');
@@ -69,7 +74,7 @@ function showBlogContent() {
         const blogContent = document.createTextNode(blogdata.tldr);
         blogContentDiv.appendChild(blogContent);
 
-        overviewElement.appendChild(blogOverview);
+        // overviewElement.appendChild(blogOverview);
 
         blogOverview.onclick = () => {
           showFullBlog(blogdata.title);
@@ -78,8 +83,23 @@ function showBlogContent() {
     });
   });
 }
+// ---TODO-- id needs to be a parameter in full implementation
+function showFullBlog() {
+  // ---TODO-- redirect to article pag
 
-function showFullBlog(id) {
+  // fetch blog content into variable
+  fetchBlogContent().then((article) => {
+    const articleContent = document.createTextNode(article);
+    console.log(articleContent);
+    // create needed div and apply article content
+    const articleDiv = document.createElement('div');
+    articleDiv.appendChild(articleContent);
+    // append result into blog page
+    const page = document.getElementById('blogSummary');
+    page.appendChild(articleDiv);
+  });
+
+  /*
   const url = `https://raw.githubusercontent.com/software-developer-org/blog/master/blogs/${id}`;
 
   //fetch blog content
@@ -111,10 +131,12 @@ function showFullBlog(id) {
       blogPage.appendChild(blogTitle);
       blogPage.appendChild(blogText);
       page.appendChild(blogPage);
+     
     });
+    */
 }
 
 window.addEventListener('load', blogTitles);
 window.addEventListener('load', showBlogContent);
 
-export { blogTitles, showBlogContent };
+export { blogTitles, showBlogContent, showFullBlog };

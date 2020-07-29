@@ -4,8 +4,11 @@
 
 // import the neccessary functions
 import * as Contract from '../../public/javascripts/contract';
-import { blogTitles } from '../../public/javascripts/blog';
-import { showBlogContent } from '../../public/javascripts/blog';
+import {
+  blogTitles,
+  showBlogContent,
+  showFullBlog,
+} from '../../public/javascripts/blog';
 
 describe('unit test bookmark', () => {
   // test blogTitles()
@@ -20,6 +23,12 @@ describe('unit test bookmark', () => {
     const spy = jest.spyOn(Contract, 'showBlog');
     spy.mockImplementation(() => []);
     showBlogContent();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  test.only('showFullBlog() to process fetch data', () => {
+    const spy = jest.spyOn(Contract, 'fetchBlogContent');
+    showFullBlog();
     expect(spy).toHaveBeenCalled();
   });
 });

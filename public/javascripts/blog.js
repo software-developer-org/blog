@@ -85,33 +85,57 @@ function showBlogContent() {
 }
 // ---TODO-- id needs to be a parameter in full implementation
 async function showFullBlog() {
-  // ---TODO--
-  // ---- try: sequencialy generate elements for the json data and arrays----
-  //redirect to article pag
-  // stringify json response
-  // create elements for the data
-  // write data into elements with paragraph logic
-  /*
-  --- OLD VERSION FOR REFERENCE---
-  // fetch blog content into variable
-  const articelHtml = fetchBlogContent().then((article) => {
-    const articleContent = document.createTextNode(article);
-    console.log(articleContent);
-    // create needed div and apply article content
-    const articleDiv = document.createElement('div');
-    articleDiv.appendChild(articleContent);
-    // append result into blog page
-    const page = document.getElementById('blogSummary');
-    page.appendChild(articleDiv);
-    return page;
-  });
-  await window.sessionStorage.setItem('blog', articelHtml);
+  // get Json data of blog article
+  const blogArticleJson = await fetchBlogContent();
+  console.log(blogArticleJson);
 
-  window.location.replace('/blogs');
-  */
+  // create elements for the data
+  const titleElement = document.createElement('h1');
+  const authorElement = document.createElement('p');
+  const dateElement = document.createElement('p');
+  const tldrElement = document.createElement('div');
+  const contentElement = document.createElement('div');
+  const linkElement = document.createElement('div');
+
+  // write data into elements with paragraph logic
+
+  //---HEADER---
+  titleElement.innerHTML = blogArticleJson.title;
+  authorElement.innerHTML = blogArticleJson.author;
+  dateElement.innerHTML = blogArticleJson.date;
+
+  //---TLDR---
+  blogArticleJson.tldr.forEach((textString) => {
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = textString;
+    tldrElement.appendChild(paragraph);
+  });
+
+  //---CONTENT---
+  blogArticleJson.content.forEach((textString) => {
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = textString;
+    contentElement.appendChild(paragraph);
+  });
+  //---LINKS---
+  blogArticleJson.links.forEach((textString) => {
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = textString;
+    linkElement.appendChild(paragraph);
+  });
+
+  // get Element to display blog article and insert the created article elements
+  const blogDiv = document.getElementById('blogArticle');
+  blogDiv.appendChild(titleElement);
+  blogDiv.appendChild(authorElement);
+  blogDiv.appendChild(dateElement);
+  blogDiv.appendChild(tldrElement);
+  blogDiv.appendChild(contentElement);
+  blogDiv.appendChild(linkElement);
 }
 
 window.addEventListener('load', blogTitles);
 window.addEventListener('load', showBlogContent);
+window.addEventListener('load', showFullBlog);
 
 export { blogTitles, showBlogContent, showFullBlog };

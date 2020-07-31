@@ -1,3 +1,8 @@
+/* ---TODO---
+  - create new stylesheet and modivy ids and clases for easier styling
+  - also create a partial for the main layout and integrate it into the ejs views
+*/
+
 /* Make the page in two columns */
 * {
   box-sizing: border-box;
@@ -13,7 +18,7 @@
   text-align: center;
   overflow: auto;
 }
-a{
+header.a{
   color: white; text-decoration: none;
 }
 #btnLogin {

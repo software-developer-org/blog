@@ -1,7 +1,10 @@
 {   "title": "Blog1",
     "date": "today",
     "author": "Ragip",
-    "tldr": ["Some verry short information hahhjkln"],
-    "content": [ "much much more information as written above"],
-    "links": ["some references for the blog"]
+    "tldr": ["Some verry short information hahhjkln",
+            "This has to be an array"],
+    "content": [ "much much more information as written above",
+            "This has to be an array"],
+    "links": ["some references for the blog",
+            "This has to be an array"]
 }

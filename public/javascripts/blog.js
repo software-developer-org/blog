@@ -34,52 +34,53 @@ function showBlogsInNavbar() {
 }
 
 // load the last 3 blogs with description etc in overview element
-function showBlogsINOverview() {
+async function showBlogsINOverview() {
   // Get the overviewElement with the ID we created in contract.js
+  const overviewElement = document.getElementById('blogSummary');
+
+  // Append it to the overview block
+  const blog = await fetchBlogOverview();
   if (document.getElementById('blogSummary')) {
+    // Get the overviewElement with the ID we created in contract.js
     const overviewElement = document.getElementById('blogSummary');
 
-    // Append it to the overview block
+    blog.forEach((blogpromise) => {
+      blogpromise.then((blogdata) => {
+        // Create a div for blog overview
+        const blogOverview = document.createElement('div');
+        blogOverview.setAttribute('id', 'blogOverview');
 
-    fetchBlogOverview().then((blog) => {
-      blog.forEach((blogpromise) => {
-        blogpromise.then((blogdata) => {
-          // Create a div for blog overview
-          const blogOverview = document.createElement('div');
-          blogOverview.setAttribute('id', 'blogOverview');
+        // create needed elements and set id
+        const blogTitleDiv = document.createElement('div');
+        blogTitleDiv.setAttribute('id', 'Blog');
+        const blogAuthorDiv = document.createElement('div');
+        blogAuthorDiv.setAttribute('id', 'Author');
+        const blogDateDiv = document.createElement('div');
+        blogDateDiv.setAttribute('id', 'Date');
+        const blogContentDiv = document.createElement('div');
+        blogContentDiv.setAttribute('id', 'Content');
 
-          // create needed elements and set id
-          const blogTitleDiv = document.createElement('div');
-          blogTitleDiv.setAttribute('id', 'Blog');
-          const blogAuthorDiv = document.createElement('div');
-          blogAuthorDiv.setAttribute('id', 'Author');
-          const blogDateDiv = document.createElement('div');
-          blogDateDiv.setAttribute('id', 'Date');
-          const blogContentDiv = document.createElement('div');
-          blogContentDiv.setAttribute('id', 'Content');
+        // create child divs in overview div
+        blogOverview.appendChild(blogTitleDiv);
+        blogOverview.appendChild(blogAuthorDiv);
+        blogOverview.appendChild(blogDateDiv);
+        blogOverview.appendChild(blogContentDiv);
 
-          // create child divs in overview div
-          blogOverview.appendChild(blogTitleDiv);
-          blogOverview.appendChild(blogAuthorDiv);
-          blogOverview.appendChild(blogDateDiv);
-          blogOverview.appendChild(blogContentDiv);
+        // write the blogdata into created elements
+        const blogTitle = document.createTextNode(blogdata.title);
+        blogTitleDiv.appendChild(blogTitle);
+        const blogAutor = document.createTextNode(blogdata.author);
+        blogAuthorDiv.appendChild(blogAutor);
+        const blogDate = document.createTextNode(blogdata.date);
+        blogDateDiv.appendChild(blogDate);
+        const blogContent = document.createTextNode(blogdata.tldr);
+        blogContentDiv.appendChild(blogContent);
 
-          // write the blogdata into created elements
-          const blogTitle = document.createTextNode(blogdata.title);
-          blogTitleDiv.appendChild(blogTitle);
-          const blogAutor = document.createTextNode(blogdata.author);
-          blogAuthorDiv.appendChild(blogAutor);
-          const blogDate = document.createTextNode(blogdata.date);
-          blogDateDiv.appendChild(blogDate);
-          const blogContent = document.createTextNode(blogdata.tldr);
-          blogContentDiv.appendChild(blogContent);
+        overviewElement.appendChild(blogOverview);
 
-          overviewElement.appendChild(blogOverview);
-
-          blogOverview.onclick = () => {
-            showFullBlogArticle(blogdata.title);
-          };
-        });
+        blogOverview.onclick = () => {
+          showFullBlogArticle(blogdata.title);
+        };
       });
     });
   }
@@ -91,11 +92,9 @@ function showBlogsINOverview() {
 
 // load the full article into overview
 async function showFullBlogArticle() {
-  if (document.getElementById('blogArticle')) {
-    // get Json data of blog article
-    const blogArticleJson = await fetchBlogContent();
-    console.log(blogArticleJson);
+  const blogArticleJson = await fetchBlogContent();
 
+  if (document.getElementById('blogArticle')) {
     // create elements for the data
     const titleElement = document.createElement('h1');
     const authorElement = document.createElement('p');

@@ -27,7 +27,7 @@ describe('check fetch data in contract', () => {
     fullTeam().then((result) => expect(result).toBeInstanceOf(Array));
   });
 
-  test.only('fetchBlogOverview() returns ;a promise object', () => {
+  test('fetchBlogOverview() returns ;a promise object', () => {
     fetchBlogOverview().then((result) => expect(result).toBeInstanceOf(Object));
   });
 });

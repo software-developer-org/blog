@@ -2,7 +2,10 @@
     "title": "Blog3-Tai",
     "date": "today",
     "author": "Rouven",
-    "tldr": "Some verry short information",
-    "content": "much much more information as written above",
-     "links": "some references for the blog"
+    "tldr": ["Some verry short information",
+            "This has to be an array"],
+    "content": ["much much more information as written above",
+            "This has to be an array"],
+     "links": ["some references for the blog",
+            "This has to be an array"]
 }

@@ -17,8 +17,8 @@ function showBlogsInNavbar() {
       // fill attributes
       blogLink.setAttribute('id', 'blog');
       // onclick
-      blogLink.onclick = (event) => {
-        showFullBlogArticle(blogname);
+      blogLink.onclick = () => {
+        window.location.href = `/blogs?${blogname}`;
       };
 
       // create h4 element for title as child of blog link
@@ -78,8 +78,9 @@ async function showBlogsINOverview() {
 
         overviewElement.appendChild(blogOverview);
 
+        // send information for full article to page
         blogOverview.onclick = () => {
-          showFullBlogArticle(blogdata.title);
+          window.location.href = `/blogs?${blogdata.title}`;
         };
       });
     });
@@ -93,6 +94,7 @@ async function showBlogsINOverview() {
 // load the full article into overview
 async function showFullBlogArticle() {
   const blogArticleJson = await fetchBlogContent();
+  console.log(blogArticleJson);
 
   if (document.getElementById('blogArticle')) {
     // create elements for the data

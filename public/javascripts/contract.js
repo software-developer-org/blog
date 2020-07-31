@@ -39,7 +39,6 @@ function fetchBlogOverview() {
 
   // fetch the first 3 blogs
   const blogContentArray = blogmetadata.then((data) => {
-    console.log(data);
     const blogdata = data;
 
     // get content of the blogs
@@ -59,8 +58,11 @@ function fetchBlogOverview() {
 
 // get a specific blog with title and full content
 function fetchBlogContent() {
-  // ---TODO-- id needs to be a parameter in full implementation
-  const id = 'Test-Pyramid';
+  // get id from search param
+  const params = window.location.search;
+  const id = params.replace('?', '');
+  console.log(id);
+
   const url = `https://raw.githubusercontent.com/software-developer-org/blog/master/blogs/${id}`;
 
   //fetch blog and return the content

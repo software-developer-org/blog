@@ -5,37 +5,37 @@ import {
 } from '../javascripts/contract.js';
 
 // laod the blog titles into navbar element
-function showBlogsInNavbar() {
+async function showBlogsInNavbar() {
+  // get data from backend
+  const blogList = await fetchBlogNavbar();
+
   // Get the navElement with the ID we created in html file, blog.html
   const navElement = document.getElementById('navBlogTitles');
 
-  //Append it to the navbar
-  fetchBlogNavbar().then((element) => {
-    element.forEach((blogname) => {
-      // create a-tag for blog link
-      const blogLink = document.createElement('a');
-      // fill attributes
-      blogLink.setAttribute('id', 'blog');
-      // onclick
-      blogLink.onclick = () => {
-        window.location.href = `/blogs?${blogname}`;
-      };
+  blogList.forEach((blogname) => {
+    // create a-tag for blog link
+    const blogLink = document.createElement('a');
+    // fill attributes
+    blogLink.setAttribute('id', 'blog');
+    // onclick
+    blogLink.onclick = () => {
+      window.location.href = `/blogs?${blogname}`;
+    };
 
-      // create h4 element for title as child of blog link
-      const h4Element = document.createElement('h4');
-      blogLink.appendChild(h4Element);
-      // create text content for title text
-      const titleContent = document.createTextNode(blogname);
-      h4Element.appendChild(titleContent);
+    // create h4 element for title as child of blog link
+    const h4Element = document.createElement('h4');
+    blogLink.appendChild(h4Element);
+    // create text content for title text
+    const titleContent = document.createTextNode(blogname);
+    h4Element.appendChild(titleContent);
 
-      navElement.appendChild(blogLink);
-    });
+    navElement.appendChild(blogLink);
   });
 }
 
 // load the last 3 blogs with description etc in overview element
 async function showBlogsINOverview() {
-  // Append it to the overview block
+  // get data from backend
   const blog = await fetchBlogOverview();
 
   if (document.getElementById('blogSummary')) {
@@ -87,8 +87,8 @@ async function showBlogsINOverview() {
 
 // load the full article into overview
 async function showFullBlogArticle() {
+  // get data from backend
   const blogArticleJson = await fetchBlogContent();
-  console.log(blogArticleJson);
 
   if (document.getElementById('blogArticle')) {
     // create elements for the data

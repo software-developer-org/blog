@@ -148,8 +148,4 @@ window.addEventListener('load', showBlogsInNavbar);
 window.addEventListener('load', showBlogsINOverview);
 window.addEventListener('load', showFullBlogArticle);
 
-export {
-  showBlogsInNavbar,
-  showBlogsINOverview as showBlogContent,
-  showFullBlogArticle,
-};
+export { showBlogsInNavbar, showBlogsINOverview, showFullBlogArticle };

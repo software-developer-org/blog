@@ -1,3 +1,8 @@
 {
-"title": "Blog3-Tai"
+    "title": "Blog3-Tai",
+    "date": "today",
+    "author": "Rouven",
+    "tldr": "Some verry short information",
+    "content": "much much more information as written above",
+     "links": "some references for the blog"
 }

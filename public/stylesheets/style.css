@@ -11,6 +11,10 @@
   padding: 60px;
   font-size: 30px;
   text-align: center;
+  overflow: auto;
+}
+a{
+  color: white; text-decoration: none;
 }
 #btnLogin {
   display: inline-block;
@@ -21,6 +25,14 @@
   padding: 10px 12px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #555555;
+  transition-duration: 0.4s;
+}
+#btnLogin:hover {
+  background-color: #4CAF50;
+}
+#btnLogin:active{
+  transform: translateY(4px);
 }
 #btnBack {
   display: inline-block;
@@ -31,6 +43,14 @@
   padding: 10px 12px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #555555;
+  transition-duration: 0.4s;
+}
+#btnBack:hover {
+  background-color: #4CAF50;
+}
+#btnBack:active{
+  transform: translateY(4px);
 }
 #btnBlog {
   display: inline-block;
@@ -41,6 +61,14 @@
   padding: 10px 12px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #555555;
+  transition-duration: 0.4s;
+}
+#btnBlog:hover {
+  background-color: #4CAF50;
+}
+#btnBlog:active{
+  transform: translateY(4px);
 }
 #btnBookmark {
   display: inline-block;
@@ -51,6 +79,14 @@
   padding: 10px 12px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #555555;
+  transition-duration: 0.4s;
+}
+#btnBookmark:hover {
+  background-color: #4CAF50;
+}
+#btnBookmark:active{
+  transform: translateY(4px);
 }
 #btnAbout {
   display: inline-block;
@@ -61,6 +97,14 @@
   padding: 10px 12px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #555555;
+  transition-duration: 0.4s;
+}
+#btnAbout:hover {
+  background-color: #4CAF50;
+}
+#btnAbout:active{
+  transform: translateY(4px);
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -105,12 +149,13 @@
   height: 75 vh;
 }
 
-/* add button settings */
+/* add button settings 
 #add{
   position: absolute;
   right: 2%;
   margin-top: 2%;
-}
+} 
+*/
 
 /* blog overview versions */
 #blogSummary{

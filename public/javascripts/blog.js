@@ -35,11 +35,9 @@ function showBlogsInNavbar() {
 
 // load the last 3 blogs with description etc in overview element
 async function showBlogsINOverview() {
-  // Get the overviewElement with the ID we created in contract.js
-  const overviewElement = document.getElementById('blogSummary');
-
   // Append it to the overview block
   const blog = await fetchBlogOverview();
+
   if (document.getElementById('blogSummary')) {
     // Get the overviewElement with the ID we created in contract.js
     const overviewElement = document.getElementById('blogSummary');
@@ -86,10 +84,6 @@ async function showBlogsINOverview() {
     });
   }
 }
-
-// ---TODO--
-// - id needs to be a parameter in full implementation
-// - save blogname in url, redirect and load blogname into the function on click of blog name in navbar or overview
 
 // load the full article into overview
 async function showFullBlogArticle() {

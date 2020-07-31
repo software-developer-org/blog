@@ -35,10 +35,10 @@ async function showBlogsInNavbar() {
 
 // load the last 3 blogs with description etc in overview element
 async function showBlogsINOverview() {
-  // get data from backend
-  const blog = await fetchBlogOverview();
-
   if (document.getElementById('blogSummary')) {
+    // get data from backend
+    const blog = await fetchBlogOverview();
+
     // Get the overviewElement with the ID we created in contract.js
     const overviewElement = document.getElementById('blogSummary');
 
@@ -87,10 +87,10 @@ async function showBlogsINOverview() {
 
 // load the full article into overview
 async function showFullBlogArticle() {
-  // get data from backend
-  const blogArticleJson = await fetchBlogContent();
-
   if (document.getElementById('blogArticle')) {
+    // get data from backend
+    const blogArticleJson = await fetchBlogContent();
+
     // create elements for the data
     const titleElement = document.createElement('h1');
     const authorElement = document.createElement('p');

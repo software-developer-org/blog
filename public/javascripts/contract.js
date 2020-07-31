@@ -18,17 +18,6 @@ function fetchBlogNavbar() {
 
 // get a specific blog with the date, author, title and tdr
 function fetchBlogOverview() {
-  /*  array[i].download_url = api
-      object.title = title
-      object.author = ...
-      object.date = ...
-      object.tldr = ...
-
-      fetch blogs content,
-      take first 3 and fetch the objekt,
-      return the resulting array 
-  */
-
   //  fetch all blogs
   const url =
     'https://api.github.com/repos/software-developer-org/blog/contents/blogs';
@@ -61,7 +50,6 @@ function fetchBlogContent() {
   // get id from search param
   const params = window.location.search;
   const id = params.replace('?', '');
-  console.log(id);
 
   const url = `https://raw.githubusercontent.com/software-developer-org/blog/master/blogs/${id}`;
 

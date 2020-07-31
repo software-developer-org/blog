@@ -84,7 +84,11 @@ function showBlogsINOverview() {
     });
   }
 }
-// ---TODO-- id needs to be a parameter in full implementation
+
+// ---TODO--
+// - id needs to be a parameter in full implementation
+// - save blogname in url, redirect and load blogname into the function on click of blog name in navbar or overview
+
 // load the full article into overview
 async function showFullBlogArticle() {
   if (document.getElementById('blogArticle')) {
@@ -101,6 +105,7 @@ async function showFullBlogArticle() {
     const linkElement = document.createElement('div');
 
     // write data into elements with paragraph logic
+    // ---TODO--- change paragraph logic for prettier display in view
 
     //---HEADER---
     titleElement.innerHTML = blogArticleJson.title;

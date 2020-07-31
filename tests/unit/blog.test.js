@@ -5,30 +5,30 @@
 // import the neccessary functions
 import * as Contract from '../../public/javascripts/contract';
 import {
-  blogTitles,
-  showBlogContent,
-  showFullBlog,
+  showBlogsInNavbar,
+  showBlogsINOverview,
+  showFullBlogArticle,
 } from '../../public/javascripts/blog';
 
 describe('unit test bookmark', () => {
   // test blogTitles()
-  test('blogTitles() processed array data', () => {
+  test('showBlogsInNavbar() processed array data', () => {
     const spy = jest.spyOn(Contract, 'getBlogs');
-    blogTitles();
+    showBlogsInNavbar();
     expect(spy).toHaveBeenCalled();
   });
 
   // test showBlogContent()
-  test('showBlogContent() processed array data', () => {
+  test('showBlogsINOverview() processed array data', () => {
     const spy = jest.spyOn(Contract, 'showBlog');
     spy.mockImplementation(() => []);
-    showBlogContent();
+    showBlogsINOverview();
     expect(spy).toHaveBeenCalled();
   });
 
-  test.only('showFullBlog() to process fetch data', () => {
+  test.only('showFullBlogArticle() to process fetch data', () => {
     const spy = jest.spyOn(Contract, 'fetchBlogContent');
-    showFullBlog();
+    showFullBlogArticle();
     expect(spy).toHaveBeenCalled();
   });
 });

@@ -5,16 +5,16 @@
 // import neccessary functions
 
 import {
-  getBlogs,
+  fetchBlogNavbar,
   getBooks,
   fullTeam,
-  fullBlog,
+  fetchBlogOverview,
 } from '../../public/javascripts/contract';
 
 describe('check fetch data in contract', () => {
   // test getBlogs()
-  test('getBlogs() returns an array of objects', () => {
-    getBlogs().then((result) => expect(result).toBeInstanceOf(Array));
+  test('fetchBlogNavbar() returns an array of objects', () => {
+    fetchBlogNavbar().then((result) => expect(result).toBeInstanceOf(Array));
   });
 
   // test getBooks()
@@ -27,7 +27,7 @@ describe('check fetch data in contract', () => {
     fullTeam().then((result) => expect(result).toBeInstanceOf(Array));
   });
 
-  test.only('fullBlog() returns ;a promise object', () => {
-    fullBlog().then((result) => expect(result).toBeInstanceOf(Object));
+  test.only('fetchBlogOverview() returns ;a promise object', () => {
+    fetchBlogOverview().then((result) => expect(result).toBeInstanceOf(Object));
   });
 });

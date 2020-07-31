@@ -1,7 +1,7 @@
 // -----BLOGS-----
 
-// get all blogs with titles
-function getBlogs() {
+// get all blog titles
+function fetchBlogNavbar() {
   const url =
     'https://api.github.com/repos/software-developer-org/blog/contents/blogs';
   const result = fetch(url)
@@ -17,7 +17,7 @@ function getBlogs() {
 }
 
 // get a specific blog with the date, author, title and tdr
-function showBlog() {
+function fetchBlogOverview() {
   /*  array[i].download_url = api
       object.title = title
       object.author = ...
@@ -143,4 +143,11 @@ function addBlog(BlogData) {}
 // add blog with the date, author, title, tdr and content
 function addBook(BookData) {}
 
-export { getBlogs, getBooks, fullTeam, showBlog, showBook, fetchBlogContent };
+export {
+  fetchBlogNavbar,
+  getBooks,
+  fullTeam,
+  fetchBlogOverview,
+  showBook,
+  fetchBlogContent,
+};

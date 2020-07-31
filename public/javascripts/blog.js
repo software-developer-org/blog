@@ -1,20 +1,16 @@
 import {
-  getBlogs,
-  showBlog,
+  fetchBlogNavbar,
+  fetchBlogOverview,
   fetchBlogContent,
 } from '../javascripts/contract.js';
 
-// ---TODO--- rewrite navbar and overview code to get new data from blogs folder
-
-function blogTitles() {
-  // Create an ordered list (ol) element
-  var ol = document.createElement('ol');
-
+// laod the blog titles into navbar element
+function showBlogsInNavbar() {
   // Get the navElement with the ID we created in html file, blog.html
   const navElement = document.getElementById('navBlogTitles');
 
   //Append it to the navbar
-  getBlogs().then((element) => {
+  fetchBlogNavbar().then((element) => {
     element.forEach((blogname) => {
       // create a-tag for blog link
       const blogLink = document.createElement('a');
@@ -22,7 +18,7 @@ function blogTitles() {
       blogLink.setAttribute('id', 'blog');
       // onclick
       blogLink.onclick = (event) => {
-        showFullBlog(blogname);
+        showFullBlogArticle(blogname);
       };
 
       // create h4 element for title as child of blog link
@@ -37,20 +33,22 @@ function blogTitles() {
   });
 }
 
-function showBlogContent() {
+// load the last 3 blogs with description etc in overview element
+function showBlogsINOverview() {
   // Get the overviewElement with the ID we created in contract.js
   if (document.getElementById('blogSummary')) {
     const overviewElement = document.getElementById('blogSummary');
 
     // Append it to the overview block
 
-    showBlog().then((blog) => {
+    fetchBlogOverview().then((blog) => {
       blog.forEach((blogpromise) => {
         blogpromise.then((blogdata) => {
           // Create a div for blog overview
           const blogOverview = document.createElement('div');
           blogOverview.setAttribute('id', 'blogOverview');
 
+          // create needed elements and set id
           const blogTitleDiv = document.createElement('div');
           blogTitleDiv.setAttribute('id', 'Blog');
           const blogAuthorDiv = document.createElement('div');
@@ -66,6 +64,7 @@ function showBlogContent() {
           blogOverview.appendChild(blogDateDiv);
           blogOverview.appendChild(blogContentDiv);
 
+          // write the blogdata into created elements
           const blogTitle = document.createTextNode(blogdata.title);
           blogTitleDiv.appendChild(blogTitle);
           const blogAutor = document.createTextNode(blogdata.author);
@@ -78,7 +77,7 @@ function showBlogContent() {
           overviewElement.appendChild(blogOverview);
 
           blogOverview.onclick = () => {
-            showFullBlog(blogdata.title);
+            showFullBlogArticle(blogdata.title);
           };
         });
       });
@@ -86,7 +85,8 @@ function showBlogContent() {
   }
 }
 // ---TODO-- id needs to be a parameter in full implementation
-async function showFullBlog() {
+// load the full article into overview
+async function showFullBlogArticle() {
   if (document.getElementById('blogArticle')) {
     // get Json data of blog article
     const blogArticleJson = await fetchBlogContent();
@@ -138,8 +138,13 @@ async function showFullBlog() {
   }
 }
 
-window.addEventListener('load', blogTitles);
-window.addEventListener('load', showBlogContent);
-window.addEventListener('load', showFullBlog);
+// event listeners for show funktions
+window.addEventListener('load', showBlogsInNavbar);
+window.addEventListener('load', showBlogsINOverview);
+window.addEventListener('load', showFullBlogArticle);
 
-export { blogTitles, showBlogContent, showFullBlog };
+export {
+  showBlogsInNavbar,
+  showBlogsINOverview as showBlogContent,
+  showFullBlogArticle,
+};
